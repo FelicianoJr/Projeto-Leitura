@@ -1,0 +1,522 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardBodyMain/> renders a cardBodyMain 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CardBodyMain
+    data={
+        Object {
+            "author": "Feliciano",
+            "body": "new situation",
+            "timestamp": 142536,
+            "title": "Udacity",
+            "voteScore": 4,
+          }
+    }
+    showPostButton={undefined}
+    toggle={[Function]}
+    toggleComment={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="card-title"
+>
+          Udacity
+</div>,
+        <div
+          className="card-text"
+>
+          new situation
+</div>,
+        <div
+          className="card-text"
+>
+          &gt;
+          <small>
+                    <b>
+                              Avaliação
+                    </b>
+          </small>
+           
+          <div
+                    className="badge"
+          >
+                    4
+          </div>
+          <br />
+          <small
+                    className="text-muted"
+          >
+                     
+                    Criado por 
+                    <b>
+                              Feliciano
+                    </b>
+                     em 
+                    <b>
+                              142536
+                    </b>
+          </small>
+</div>,
+        <Connect(FooterCardComment)
+          data={
+                    Object {
+                              "author": "Feliciano",
+                              "body": "new situation",
+                              "timestamp": 142536,
+                              "title": "Udacity",
+                              "voteScore": 4,
+                            }
+          }
+          toggleComment={[Function]}
+/>,
+      ],
+      "className": "card-body",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Udacity",
+          "className": "card-title",
+        },
+        "ref": null,
+        "rendered": "Udacity",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "new situation",
+          "className": "card-text",
+        },
+        "ref": null,
+        "rendered": "new situation",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            ">",
+            <small>
+              <b>
+                            Avaliação
+              </b>
+</small>,
+            " ",
+            <div
+              className="badge"
+>
+              4
+</div>,
+            <br />,
+            <small
+              className="text-muted"
+>
+               
+              Criado por 
+              <b>
+                            Feliciano
+              </b>
+               em 
+              <b>
+                            142536
+              </b>
+</small>,
+          ],
+          "className": "card-text",
+        },
+        "ref": null,
+        "rendered": Array [
+          ">",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <b>
+                Avaliação
+</b>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Avaliação",
+              },
+              "ref": null,
+              "rendered": "Avaliação",
+              "type": "b",
+            },
+            "type": "small",
+          },
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": 4,
+              "className": "badge",
+            },
+            "ref": null,
+            "rendered": 4,
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                "Criado por ",
+                <b>
+                  Feliciano
+</b>,
+                " em ",
+                <b>
+                  142536
+</b>,
+              ],
+              "className": "text-muted",
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              "Criado por ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Feliciano",
+                },
+                "ref": null,
+                "rendered": "Feliciano",
+                "type": "b",
+              },
+              " em ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 142536,
+                },
+                "ref": null,
+                "rendered": 142536,
+                "type": "b",
+              },
+            ],
+            "type": "small",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "data": Object {
+            "author": "Feliciano",
+            "body": "new situation",
+            "timestamp": 142536,
+            "title": "Udacity",
+            "voteScore": 4,
+          },
+          "toggleComment": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="card-title"
+>
+            Udacity
+</div>,
+          <div
+            className="card-text"
+>
+            new situation
+</div>,
+          <div
+            className="card-text"
+>
+            &gt;
+            <small>
+                        <b>
+                                    Avaliação
+                        </b>
+            </small>
+             
+            <div
+                        className="badge"
+            >
+                        4
+            </div>
+            <br />
+            <small
+                        className="text-muted"
+            >
+                         
+                        Criado por 
+                        <b>
+                                    Feliciano
+                        </b>
+                         em 
+                        <b>
+                                    142536
+                        </b>
+            </small>
+</div>,
+          <Connect(FooterCardComment)
+            data={
+                        Object {
+                                    "author": "Feliciano",
+                                    "body": "new situation",
+                                    "timestamp": 142536,
+                                    "title": "Udacity",
+                                    "voteScore": 4,
+                                  }
+            }
+            toggleComment={[Function]}
+/>,
+        ],
+        "className": "card-body",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Udacity",
+            "className": "card-title",
+          },
+          "ref": null,
+          "rendered": "Udacity",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "new situation",
+            "className": "card-text",
+          },
+          "ref": null,
+          "rendered": "new situation",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              ">",
+              <small>
+                <b>
+                                Avaliação
+                </b>
+</small>,
+              " ",
+              <div
+                className="badge"
+>
+                4
+</div>,
+              <br />,
+              <small
+                className="text-muted"
+>
+                 
+                Criado por 
+                <b>
+                                Feliciano
+                </b>
+                 em 
+                <b>
+                                142536
+                </b>
+</small>,
+            ],
+            "className": "card-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            ">",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <b>
+                  Avaliação
+</b>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Avaliação",
+                },
+                "ref": null,
+                "rendered": "Avaliação",
+                "type": "b",
+              },
+              "type": "small",
+            },
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 4,
+                "className": "badge",
+              },
+              "ref": null,
+              "rendered": 4,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  "Criado por ",
+                  <b>
+                    Feliciano
+</b>,
+                  " em ",
+                  <b>
+                    142536
+</b>,
+                ],
+                "className": "text-muted",
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                "Criado por ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Feliciano",
+                  },
+                  "ref": null,
+                  "rendered": "Feliciano",
+                  "type": "b",
+                },
+                " em ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 142536,
+                  },
+                  "ref": null,
+                  "rendered": 142536,
+                  "type": "b",
+                },
+              ],
+              "type": "small",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "data": Object {
+              "author": "Feliciano",
+              "body": "new situation",
+              "timestamp": 142536,
+              "title": "Udacity",
+              "voteScore": 4,
+            },
+            "toggleComment": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
