@@ -6,7 +6,7 @@ const FieldBodyAuthor = () => {
     <div>
       
         <div className="form-group">
-          <label for="author">Autor</label>
+          <label >Autor</label>
           <Field
             name="author"
             className="form-control"
@@ -16,7 +16,7 @@ const FieldBodyAuthor = () => {
           />
         </div>
         <div className="form-group">
-          <label for="body">Descrição</label>
+          <label >Descrição</label>
           <Field
             name="body"
             className="form-control"
