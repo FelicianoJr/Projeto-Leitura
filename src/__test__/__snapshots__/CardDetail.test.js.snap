@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardBodyMain/> renders a cardBodyMain 1`] = `
+exports[`<CardBodyMain/> snapchot  a cardDetail 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CardBodyMain
+  Symbol(enzyme.__unrendered__): <CardDetail
     data={
         Object {
             "author": "Feliciano",
@@ -14,9 +14,6 @@ ShallowWrapper {
             "voteScore": 4,
           }
     }
-    showPostButton={undefined}
-    toggle={[Function]}
-    toggleComment={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -44,10 +41,9 @@ ShallowWrapper {
         <div
           className="card-text"
 >
-          &gt;
           <small>
                     <b>
-                              Avaliação
+                              Pontuação
                     </b>
           </small>
            
@@ -71,7 +67,7 @@ ShallowWrapper {
                     </b>
           </small>
 </div>,
-        <Connect(FooterCardComment)
+        <GroupButtonCard
           data={
                     Object {
                               "author": "Feliciano",
@@ -81,7 +77,6 @@ ShallowWrapper {
                               "voteScore": 4,
                             }
           }
-          toggleComment={[Function]}
 />,
       ],
       "className": "card-body",
@@ -118,10 +113,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            ">",
             <small>
               <b>
-                            Avaliação
+                            Pontuação
               </b>
 </small>,
             " ",
@@ -149,14 +143,13 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          ">",
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": <b>
-                Avaliação
+                Pontuação
 </b>,
             },
             "ref": null,
@@ -165,10 +158,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Avaliação",
+                "children": "Pontuação",
               },
               "ref": null,
-              "rendered": "Avaliação",
+              "rendered": "Pontuação",
               "type": "b",
             },
             "type": "small",
@@ -249,7 +242,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "data": Object {
             "author": "Feliciano",
@@ -258,7 +251,6 @@ ShallowWrapper {
             "title": "Udacity",
             "voteScore": 4,
           },
-          "toggleComment": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -287,10 +279,9 @@ ShallowWrapper {
           <div
             className="card-text"
 >
-            &gt;
             <small>
                         <b>
-                                    Avaliação
+                                    Pontuação
                         </b>
             </small>
              
@@ -314,7 +305,7 @@ ShallowWrapper {
                         </b>
             </small>
 </div>,
-          <Connect(FooterCardComment)
+          <GroupButtonCard
             data={
                         Object {
                                     "author": "Feliciano",
@@ -324,7 +315,6 @@ ShallowWrapper {
                                     "voteScore": 4,
                                   }
             }
-            toggleComment={[Function]}
 />,
         ],
         "className": "card-body",
@@ -361,10 +351,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              ">",
               <small>
                 <b>
-                                Avaliação
+                                Pontuação
                 </b>
 </small>,
               " ",
@@ -392,14 +381,13 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            ">",
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": <b>
-                  Avaliação
+                  Pontuação
 </b>,
               },
               "ref": null,
@@ -408,10 +396,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Avaliação",
+                  "children": "Pontuação",
                 },
                 "ref": null,
-                "rendered": "Avaliação",
+                "rendered": "Pontuação",
                 "type": "b",
               },
               "type": "small",
@@ -492,7 +480,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "data": Object {
               "author": "Feliciano",
@@ -501,7 +489,6 @@ ShallowWrapper {
               "title": "Udacity",
               "voteScore": 4,
             },
-            "toggleComment": [Function],
           },
           "ref": null,
           "rendered": null,

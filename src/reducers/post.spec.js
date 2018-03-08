@@ -178,7 +178,7 @@ describe("reducers post", () => {
     expect(
       post(postsMock, {
         type: types.COUNT_COMMENT_POST,
-        id: { id: "8xf0"}
+        id: "8xf0"
       })
     ).toEqual([
       {

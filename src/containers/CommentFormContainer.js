@@ -19,7 +19,7 @@ let CommentFormContainer = props => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(values => submit(values))}>
+      <form onSubmit={handleSubmit(submit)}>
         <div className="modal-body">
           <FieldBodyAuthor />
         </div>

@@ -1,23 +1,21 @@
 import React from "react";
 import { shallow } from "enzyme";
-import CardBodyMain from "../components/CardBodyMain";
+import CardDetail from "../components/CardDetail";
+import GroupButtonCard from "../components/GroupButtonCard";
 
 const setup = (data, showPostButton) => {
-  const actions = {
-    toggle: jest.fn(),
-    toggleComment: jest.fn()
-  };
+  
   const component = shallow(
-    <CardBodyMain {...actions} data={data} showPostButton={showPostButton} />
+    <CardDetail  data={data} />
   );
 
   return {
     component: component,
-    actions: actions,
     divTitle: component.find(".card-title"),
     divBody: component.find(".card-text"),
     badgeScore: component.find(".badge"),
     b: component.find("b"),
+    groupButton: component.find(GroupButtonCard)
   };
 };
 
@@ -37,7 +35,7 @@ describe("<CardBodyMain/>", () => {
     timestamp: 142536
   };
 
-  it("should render {title}", () => {
+  it("should render all Detail", () => {
     const { divTitle, divBody, badgeScore, b } = setup(postProps);
     expect(divTitle.text()).toEqual("Udacity");
     expect(divBody.at(0).text()).toEqual("new situation");
@@ -46,28 +44,13 @@ describe("<CardBodyMain/>", () => {
     expect(b.at(2).text()).toEqual("142536");
   });
 
-  it("renders a <FooterPost/>", () => {
-    // const { footerPost } = setup(postProps,true);
-    // expect(footerPost.props().data).toEqual({
-    //   title: "Udacity",
-    //   body: "new situation",
-    //   voteScore: 4,
-    //   author: "Feliciano",
-    //   timestamp: 142536
-    // });
-  });
+  it("renders a <GroupButtonCard/>", () => {
+    const { groupButton } = setup(postProps);
+    expect(groupButton.length).toEqual(1)
+});
 
-  it("renders a <FooterComment/>", () => {
-    // const { footerComment } = setup(commentProps,false);
-    // expect(footerComment.props().data).toEqual({
-    //   body: "new situation",
-    //   voteScore: 4,
-    //   author: "Feliciano",
-    //   timestamp: 142536
-    // });
-  });
 
-  it("renders a cardBodyMain", () => {
+  it("snapchot  a cardDetail", () => {
     const { component } = setup(postProps);
     expect(component).toMatchSnapshot();
   });

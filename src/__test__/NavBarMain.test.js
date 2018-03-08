@@ -65,3 +65,9 @@ describe("<NavBarMain/>", () => {
     expect(actions.toggle).toBeCalled();
   });
 });
+//example change value
+// const wrapper = shallow(<Login />);
+//    wrapper.find('#password').simulate('change', {target: {name: 'password', value: 'cats'}});
+   
+//    expect(wrapper.state('password')).toEqual('cats');
+//   })

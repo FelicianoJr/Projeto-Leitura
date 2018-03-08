@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
 import React from "react";
 import { Row, Col, Modal, ModalHeader } from "reactstrap";
-import PostCard from "../components/PostCard";
 import CommentFormContainer from "./CommentFormContainer";
 import PostFormContainer from "./PostFormContainer";
-
+import CardDetail from "../components/CardDetail";
 import {
   getAllPost,
   getCommentPost,
@@ -27,7 +26,7 @@ class PostContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.props.onPostAll();
+    this.props.getAllPost();
   }
 
   toggle = () => {
@@ -42,24 +41,35 @@ class PostContainer extends React.Component {
     });
   };
 
+  filterComments = post =>
+    this.props.comments.filter(comment => comment.parentId === post.id);
+
+
   render() {
-    const { posts, comments } = this.props;
     return (
       <div>
-        {posts &&
-          posts.map(post => (
-            <div key={post.id} className="row">
-              <div className="col-sm-12">
-                <PostCard
-                  post={post}
-                  comments={comments.filter(
-                    comment => comment.parentId === post.id
-                  )}
-                  action={this.props}
-                  toggle={this.toggle}
-                  toggleComment={this.toggleComment}
-                />
-              </div>
+        {this.props.posts &&
+          this.props.posts.map(post => (
+            <div key={post.id} className="card mb-2 mx-2">
+              <CardDetail
+                data={post}
+                show={this.props.getCommentPost}
+                new={this.props.getParentId}
+                edit={this.props.getPost}
+                delete={this.props.deletePost}
+                vote={this.props.votePost}
+              />
+             
+              {this.filterComments(post).map(comment => (
+                <div key={comment.id} className="card mb-2 mx-2">
+                  <CardDetail
+                    data={comment}
+                    edit={this.props.getComment}
+                    delete={this.props.deleteComment}
+                    vote={this.props.voteComment}
+                  />
+                </div>
+              ))}
             </div>
           ))}
 
@@ -96,15 +106,15 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onPostAll: () => dispatch(getAllPost()),
-    onParentId: data => dispatch(getParentId(data)),
-    onPost: data => dispatch(getPost(data)),
-    onDeletePost: data => dispatch(removePost(data)),
-    onVotePost: data => dispatch(votePost(data)),
-    onShowComment: data => dispatch(getCommentPost(data)),
-    onDeleteComment: data => dispatch(deleteComment(data)),
-    onVoteComment: data => dispatch(voteComment(data)),
-    onComment: data => dispatch(getComment(data))
+    getAllPost: () => dispatch(getAllPost()),
+    getParentId: data => dispatch(getParentId(data)),
+    getPost: data => dispatch(getPost(data)),
+    deletePost: data => dispatch(removePost(data)),
+    votePost: data => dispatch(votePost(data)),
+    getCommentPost: data => dispatch(getCommentPost(data)),
+    deleteComment: data => dispatch(deleteComment(data)),
+    voteComment: data => dispatch(voteComment(data)),
+    getComment: data => dispatch(getComment(data))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(PostContainer);

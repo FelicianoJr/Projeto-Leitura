@@ -8,7 +8,6 @@ import { editPost, addPost } from "../actions";
 import { UUID } from "../mocks/UUID";
 
 let PostFormContainer = props => {
- console.log("props form")
   const { handleSubmit, toggle, pristine, submitting, initialValues } = props;
   
   const submit = values => {
@@ -22,13 +21,15 @@ let PostFormContainer = props => {
   
   return (
     <div>
-      <form onSubmit={handleSubmit(values => submit(values))}>
+      <form onSubmit={handleSubmit(submit)}>
         <div className="modal-body">
           <FieldTitleCategory />
           <FieldBodyAuthor />
         </div>
         <div className="modal-footer">
-          <ButtonSubmit pristine={pristine} submitting={submitting} />
+          <ButtonSubmit
+           pristine={pristine} 
+           submitting={submitting} />
         </div>
       </form>
     </div>

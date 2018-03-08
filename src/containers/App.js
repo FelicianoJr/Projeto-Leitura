@@ -8,20 +8,18 @@ class App extends React.Component {
     super(props);
   }
 
-  pushRoute = event => {
-    this.props.history.push(`/home/${event.target.value}`);
+  pushRoute = e => {
+    this.props.history.push(`/home/${e.target.value}`);
+    e.preventDefault();
   };
 
-  navBar =() => <NavBarContainer pushRoute={this.pushRoute} />
-
   render() {
-    console.log("render APP")
     return (
       <div>
-        {this.navBar()}
-        <Container>
+        <NavBarContainer pushRoute={this.pushRoute} />
+        <div className="container">
           <PostContainer />
-        </Container>
+        </div>
       </div>
     );
   }
