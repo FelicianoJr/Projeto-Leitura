@@ -1,11 +1,17 @@
 import React from "react";
-import { Container } from "reactstrap";
 import NavBarContainer from "./NavBarContainer";
 import PostContainer from "./PostContainer";
+import { connect } from "react-redux";
+import { getAllPost, getCategoryAll } from "../actions";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    this.props.getAllPost();
+    this.props.categoryAll();
   }
 
   pushRoute = e => {
@@ -18,11 +24,17 @@ class App extends React.Component {
       <div>
         <NavBarContainer pushRoute={this.pushRoute} />
         <div className="container">
-          <PostContainer />
+          <PostContainer  />
         </div>
       </div>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    getAllPost: () => dispatch(getAllPost()),
+    categoryAll: () => dispatch(getCategoryAll())
+  };
+};
+export default connect(null, mapDispatchToProps)(App);

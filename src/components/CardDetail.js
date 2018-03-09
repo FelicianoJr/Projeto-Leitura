@@ -4,23 +4,41 @@ import { UUID } from "../mocks/UUID";
 import GroupButtonCard from "./GroupButtonCard";
 
 const CardDetail = props => {
-
+  const {
+    showComment,
+    newComment,
+    edit,
+    remove,
+    voteDown,
+    voteUp,
+    data
+  } = props;
   return (
+
     <div className="card-body">
-      {props.data.title && <div className="card-title">{props.data.title}</div>}
-      <div className="card-text">{props.data.body}</div>
+      {data.title && <div className="card-title">{data.title}</div>}
+      <div className="card-text">{data.body}</div>
       <div className="card-text">
         <small>
           <b>Pontuação</b>
         </small>{" "}
-        <div className="badge">{props.data.voteScore}</div>
+        <div className="badge">{data.voteScore}</div>
         <br />
         <small className="text-muted">
           {" "}
-          Criado por <b>{props.data.author}</b> em <b>{props.data.timestamp}</b>
+          Criado por <b>{data.author}</b> em <b>{data.timestamp}</b>
         </small>
       </div>
-      <GroupButtonCard {...props}/>
+
+      <GroupButtonCard
+        data={data}
+        showComment={showComment}
+        newComment={newComment}
+        edit={edit}
+        remove={remove}
+        voteDown={voteDown}
+        voteUp={voteUp}
+      />
     </div>
   );
 };

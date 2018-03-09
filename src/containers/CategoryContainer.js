@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import PostContainer from "./PostContainer";
-import { Container } from "reactstrap";
 import { getPostAllCategory } from "../actions";
 import NavBarContainer from "./NavBarContainer";
 
@@ -23,9 +22,9 @@ class CategoryContainer extends React.Component {
     return (
       <div>
         <NavBarContainer category={this.nameCategory()} />
-        <Container>
+        <div className="container">
           <PostContainer />
-        </Container>
+        </div>
       </div>
     );
   }

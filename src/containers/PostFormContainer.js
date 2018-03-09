@@ -1,6 +1,6 @@
+import React from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
-import React from "react";
 import FieldBodyAuthor from "../components/FieldBodyAuthor";
 import FieldTitleCategory from "../components/FieldTitleCategory";
 import ButtonSubmit from "../components/ButtonSubmit";
@@ -8,7 +8,7 @@ import { editPost, addPost } from "../actions";
 import { UUID } from "../mocks/UUID";
 
 let PostFormContainer = props => {
-  const { handleSubmit, toggle, pristine, submitting, initialValues } = props;
+  const { handleSubmit, togglePost, pristine, submitting, initialValues } = props;
   
   const submit = values => {
     if (initialValues.body) {
@@ -16,7 +16,7 @@ let PostFormContainer = props => {
     } else {
       props.addPost(values);
     }
-    toggle();
+    togglePost();
   };
   
   return (

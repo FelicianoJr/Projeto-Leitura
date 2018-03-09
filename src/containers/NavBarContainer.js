@@ -3,11 +3,14 @@ import PostContainer from "./PostContainer";
 import { sortPost, getCategoryAll } from "../actions";
 import { connect } from "react-redux";
 import NavBarMain from "../components/NavBarMain";
+import Modal from "react-modal";
 
-import { Modal, ModalHeader, Container } from "reactstrap";
 import PostFormContainer from "./PostFormContainer";
 
+Modal.setAppElement("#root");
+
 class NavBarContainer extends React.PureComponent {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -20,14 +23,7 @@ class NavBarContainer extends React.PureComponent {
       modal: !this.state.modal
     });
   };
-
-  componentDidMount() {
-    const { categories } = this.props;
-    if (categories.length === 0) {
-      this.props.categoryAll();
-    }
-  }
-
+  
   render() {
     const { categories, sortPost, pushRoute, category } = this.props;
     return (
@@ -40,30 +36,25 @@ class NavBarContainer extends React.PureComponent {
           category={category}
         />
 
-        {this.toggle && (
-          <Modal
-            isOpen={this.state.modal}
-            toggle={this.toggle}
-            className={this.props.className}
-          >
-            <ModalHeader toggle={this.toggle}>Postar</ModalHeader>
-            <PostFormContainer toggle={this.toggle} />
-          </Modal>
-        )}
+        <Modal
+          isOpen={this.state.modal}
+          contentLabel="Minimal Modal Example"
+        >
+          <PostFormContainer toggle={this.toggle} />
+        </Modal>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    categoryAll: () => dispatch(getCategoryAll()),
-    sortPost: event => dispatch(sortPost(event.target.value))
-  };
-};
-
 const mapStateToProps = state => ({
   categories: state.categories
 });
+
+const mapDispatchToProps = dispatch => {
+  return {
+    sortPost: event => dispatch(sortPost(event.target.value))
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBarContainer);

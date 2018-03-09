@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
 import React from "react";
-import { Row, Col, Modal, ModalHeader } from "reactstrap";
 import CommentFormContainer from "./CommentFormContainer";
 import PostFormContainer from "./PostFormContainer";
 import CardDetail from "../components/CardDetail";
+import Modal from "react-modal";
+import { UUID } from "../mocks/UUID";
+
 import {
-  getAllPost,
   getCommentPost,
   getParentId,
   deleteComment,
@@ -25,11 +26,23 @@ class PostContainer extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.getAllPost();
-  }
+  addComment = post => {
+    return {
+      id: UUID(),
+      parentId: post.id,
+      timestamp: Date.now()
+    };
+  };
 
-  toggle = () => {
+  getDownVote = data => {
+    return { id: data.id, option: "downVote" };
+  };
+
+  getUpVote = data => {
+    return { id: data.id, option: "upVote" };
+  };
+
+  togglePost = () => {
     this.setState({
       modal: !this.state.modal
     });
@@ -44,56 +57,61 @@ class PostContainer extends React.Component {
   filterComments = post =>
     this.props.comments.filter(comment => comment.parentId === post.id);
 
-
   render() {
+    const { posts, comments } = this.props;
     return (
       <div>
-        {this.props.posts &&
-          this.props.posts.map(post => (
+        {posts &&
+          posts.map(post => (
             <div key={post.id} className="card mb-2 mx-2">
               <CardDetail
                 data={post}
-                show={this.props.getCommentPost}
-                new={this.props.getParentId}
-                edit={this.props.getPost}
-                delete={this.props.deletePost}
-                vote={this.props.votePost}
+                showComment={() => this.props.getCommentPost(post)}
+                newComment={() => {
+                  this.props.getParentId(this.addComment(post));
+                  this.toggleComment();
+                }}
+                edit={() => {
+                  this.props.getPost(post);
+                  this.togglePost();
+                }}
+                remove={() => this.props.removePost(post)}
+                voteDown={() => this.props.votePost(this.getDownVote(post))}
+                voteUp={() => this.props.votePost(this.getUpVote(post))}
               />
-             
-              {this.filterComments(post).map(comment => (
-                <div key={comment.id} className="card mb-2 mx-2">
-                  <CardDetail
-                    data={comment}
-                    edit={this.props.getComment}
-                    delete={this.props.deleteComment}
-                    vote={this.props.voteComment}
-                  />
-                </div>
-              ))}
+
+              {comments &&
+                this.filterComments(post).map(comment => (
+                  <div key={comment.id} className="card mb-2 mx-2">
+                    <CardDetail
+                      data={comment}
+                      edit={() => {
+                        this.props.getComment(comment);
+                        this.toggleComment();
+                      }}
+                      remove={() => this.props.deleteComment(comment)}
+                      voteDown={() =>
+                        this.props.voteComment(this.getDownVote(comment))
+                      }
+                      voteUp={() =>
+                        this.props.voteComment(this.getUpVote(comment))
+                      }
+                    />
+                  </div>
+                ))}
             </div>
           ))}
 
-        {this.toggleComment && (
-          <Modal
-            isOpen={this.state.modalComment}
-            toggle={this.toggleComment}
-            className={this.props.className}
-          >
-            <ModalHeader toggle={this.toggleComment}>Comentar</ModalHeader>
-            <CommentFormContainer toggle={this.toggleComment} />
-          </Modal>
-        )}
+        <Modal
+          isOpen={this.state.modalComment}
+          contentLabel="Minimal Modal Example"
+        >
+          <CommentFormContainer toggle={this.toggleComment} />
+        </Modal>
 
-        {this.toggle && (
-          <Modal
-            isOpen={this.state.modal}
-            toggle={this.toggle}
-            className={this.props.className}
-          >
-            <ModalHeader toggle={this.toggle}>Postar</ModalHeader>
-            <PostFormContainer toggle={this.toggle} />
-          </Modal>
-        )}
+        <Modal isOpen={this.state.modal} contentLabel="Minimal Modal Example">
+          <PostFormContainer togglePost={this.togglePost} />
+        </Modal>
       </div>
     );
   }
@@ -104,17 +122,13 @@ const mapStateToProps = state => ({
   comments: state.comment
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getAllPost: () => dispatch(getAllPost()),
-    getParentId: data => dispatch(getParentId(data)),
-    getPost: data => dispatch(getPost(data)),
-    deletePost: data => dispatch(removePost(data)),
-    votePost: data => dispatch(votePost(data)),
-    getCommentPost: data => dispatch(getCommentPost(data)),
-    deleteComment: data => dispatch(deleteComment(data)),
-    voteComment: data => dispatch(voteComment(data)),
-    getComment: data => dispatch(getComment(data))
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(PostContainer);
+export default connect(mapStateToProps, {
+  getParentId,
+  getPost,
+  removePost,
+  votePost,
+  getCommentPost,
+  deleteComment,
+  voteComment,
+  getComment
+})(PostContainer);

@@ -16,3 +16,19 @@ body {
   background-size: 28px;
   font-size: 0;
 }
+
+.modal {
+  top: 40px;
+  left: 200px;
+  right: 200px;
+  bottom: 40px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.75);
+}

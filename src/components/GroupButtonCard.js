@@ -1,13 +1,15 @@
 import React from "react";
 
 const GroupButtonCard = props => {
-  const newComment = id => {
-    return {
-      // id: UUID(),
-      parentId: id,
-      timestamp: Date.now()
-    };
-  };
+  const {
+    showComment,
+    newComment,
+    edit,
+    remove,
+    voteUp,
+    voteDown,
+    data
+  } = props;
 
   return (
     <div>
@@ -15,19 +17,16 @@ const GroupButtonCard = props => {
         id="find"
         type="button"
         className="btn btn-outline-info btn-sm mr-sm-2"
-        onClick={() => props.show(props.data)}
+        onClick={showComment}
       >
         Visualisar Comentários{" "}
-        <span className="badge badge-light">{props.data.commentCount}</span>
+        <span className="badge badge-light">{data.commentCount}</span>
       </button>
       <button
         id="edit"
         type="button"
         className="btn btn-outline-info btn-sm mr-sm-2"
-        onClick={() => {
-          props.new(newComment(props.data.id));
-          // props.toggleComment();
-        }}
+        onClick={newComment}
       >
         Adicionar Comentário
       </button>
@@ -35,10 +34,7 @@ const GroupButtonCard = props => {
         id="edit"
         type="button"
         className="btn btn-outline-info btn-sm mr-sm-2"
-        onClick={() => {
-          props.edit(props.data);
-          // props.toggle();
-        }}
+        onClick={edit}
       >
         Editar
       </button>
@@ -46,7 +42,7 @@ const GroupButtonCard = props => {
         id="delete"
         type="button"
         className="btn btn-outline-info btn-sm mr-sm-2"
-        onClick={() => props.delete(props.data)}
+        onClick={remove}
       >
         Excluir
       </button>
@@ -54,7 +50,7 @@ const GroupButtonCard = props => {
         id="like"
         type="button"
         className="btn btn-outline-success btn-sm mr-sm-2"
-        onClick={() => props.vote({ id: props.data.id, option: "upVote" })}
+        onClick={voteUp}
       >
         Gostei
       </button>
@@ -62,7 +58,7 @@ const GroupButtonCard = props => {
         id="dislike"
         type="button"
         className="btn btn-outline-danger btn-sm"
-        onClick={() => props.vote({ id: props.data.id, option: "downVote" })}
+        onClick={voteDown}
       >
         Não Gostei
       </button>
