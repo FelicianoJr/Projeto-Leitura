@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { UUID } from "../mocks/UUID";
 import GroupButtonCard from "./GroupButtonCard";
 import { format } from "date-fns";
 

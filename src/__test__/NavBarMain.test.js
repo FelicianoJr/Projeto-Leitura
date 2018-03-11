@@ -4,7 +4,7 @@ import NavbarMain from "../components/NavBarMain";
 
 const setup = (categories = []) => {
   const actions = {
-    toggle: jest.fn(),
+    newPost: jest.fn(),
     sortPost: jest.fn(),
     pushRoute: jest.fn()
   };
@@ -54,7 +54,7 @@ describe("<NavBarMain/>", () => {
   });
 
   it("should call PushRoute", () => {
-    const { actions, select } = setup();
+    const { actions, select,component } = setup();
     select.at(0).simulate("change", { target: { value: "100" } });
     expect(actions.pushRoute).toBeCalled();
   });
@@ -62,7 +62,7 @@ describe("<NavBarMain/>", () => {
   it("should button toggle", () => {
     const { button, actions } = setup();
     button.simulate("click");
-    expect(actions.toggle).toBeCalled();
+    expect(actions.newPost).toBeCalled();
   });
 });
 //example change value

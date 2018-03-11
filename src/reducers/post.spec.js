@@ -174,10 +174,10 @@ describe("reducers post", () => {
     ]);
   });
 
-  it("should handle COUNT_COMMENT_POST", () => {
+  it("should handle DECREASE_COUNT", () => {
     expect(
       post(postsMock, {
-        type: types.COUNT_COMMENT_POST,
+        type: types.DECREASE_COUNT,
         id: "8xf0"
       })
     ).toEqual([
@@ -205,6 +205,39 @@ describe("reducers post", () => {
       }
     ]);
   });
+
+  it("should handle DECREASE_COUNT", () => {
+    expect(
+      post(postsMock, {
+        type: types.INCREASE_COUNT,
+        id: "8xf0"
+      })
+    ).toEqual([
+      {
+        id: "8xf0",
+        timestamp: 1467166872634,
+        title: "Udacity",
+        body: "Everyone.",
+        author: "thingtwo",
+        category: "react",
+        voteScore: 6,
+        deleted: false,
+        commentCount: 3
+      },
+      {
+        id: "6ni6",
+        timestamp: 1468479767190,
+        title: "Learn",
+        body: "Just kidding.",
+        author: "thingone",
+        category: "redux",
+        voteScore: -5,
+        deleted: false,
+        commentCount: 0
+      }
+    ]);
+  });
+
 
   it("should handle SORT_POST / SCORE_SMALLER", () => {
     expect(

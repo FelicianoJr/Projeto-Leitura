@@ -5,7 +5,7 @@ import FieldBodyAuthor from "../components/FieldBodyAuthor";
 import FieldTitleCategory from "../components/FieldTitleCategory";
 import ButtonSubmit from "../components/ButtonSubmit";
 import { editPost, addPost } from "../actions";
-import { UUID } from "../mocks/UUID";
+import ButtonClose from "../components/ButtonClose";
 
 let PostFormContainer = props => {
   const {
@@ -25,11 +25,12 @@ let PostFormContainer = props => {
     }
     toggle();
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit(submit)}>
         <div className="modal-body">
-          <FieldTitleCategory  />
+          <FieldTitleCategory />
           <FieldBodyAuthor />
         </div>
         <div className="modal-footer">
@@ -42,10 +43,7 @@ let PostFormContainer = props => {
 
 PostFormContainer = reduxForm({
   form: "post",
-  initialValues: {
-    id: UUID(),
-    timestamp: Date.now()
-  },
+  initialValues: {},
   enableReinitialize: true
 })(PostFormContainer);
 

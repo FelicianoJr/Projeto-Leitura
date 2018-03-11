@@ -4,10 +4,7 @@ import CardDetail from "../components/CardDetail";
 import GroupButtonCard from "../components/GroupButtonCard";
 
 const setup = (data, showPostButton) => {
-  
-  const component = shallow(
-    <CardDetail  data={data} />
-  );
+  const component = shallow(<CardDetail data={data} />);
 
   return {
     component: component,
@@ -19,20 +16,21 @@ const setup = (data, showPostButton) => {
   };
 };
 
-describe("<CardBodyMain/>", () => {
-
+describe("<CardDetail/>", () => {
+  
   const postProps = {
     title: "Udacity",
     body: "new situation",
     voteScore: 4,
     author: "Feliciano",
-    timestamp: 142536
+    timestamp: 1467166872634
   };
+
   const commentProps = {
     body: "new situation",
     voteScore: 4,
     author: "Feliciano",
-    timestamp: 142536
+    timestamp: 1467166872634
   };
 
   it("should render all Detail", () => {
@@ -41,14 +39,13 @@ describe("<CardBodyMain/>", () => {
     expect(divBody.at(0).text()).toEqual("new situation");
     expect(badgeScore.text()).toEqual("4");
     expect(b.at(1).text()).toEqual("Feliciano");
-    expect(b.at(2).text()).toEqual("142536");
+    expect(b.at(2).text()).toEqual("28/06/2016");
   });
 
   it("renders a <GroupButtonCard/>", () => {
     const { groupButton } = setup(postProps);
-    expect(groupButton.length).toEqual(1)
-});
-
+    expect(groupButton.length).toEqual(1);
+  });
 
   it("snapchot  a cardDetail", () => {
     const { component } = setup(postProps);

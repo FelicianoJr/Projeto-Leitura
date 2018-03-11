@@ -12,10 +12,15 @@ const removeComment = comment => ({
 });
 
 export const deleteComment = comment => dispatch => {
-  commentAPI.remove(comment.id).then(resp => {
-    dispatch(removeComment(resp));
-    dispatch(decreaseCountComment(resp.parentId));
-  }).catch(resp => dispatch());
+  commentAPI
+    .remove(comment.id)
+    .then(resp => {
+      dispatch(removeComment(resp));
+      dispatch(decreaseCountComment(resp.parentId));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const add = comment => ({
@@ -24,10 +29,15 @@ const add = comment => ({
 });
 
 export const addComment = comment => dispatch => {
-  commentAPI.create(comment).then(resp => {
-    dispatch(add(resp));
-    dispatch(increaseCountComment(comment.parentId));
-  }).catch(resp => console.log(resp));
+  commentAPI
+    .create(comment)
+    .then(resp => {
+      dispatch(add(resp));
+      dispatch(increaseCountComment(comment.parentId));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const receiveIdComment = comment => ({
@@ -36,9 +46,14 @@ const receiveIdComment = comment => ({
 });
 
 export const getIdComment = comment => dispatch => {
-  commentAPI.getId(comment.id).then(resp => {
-    dispatch(receiveIdComment(resp));
-  }).catch(resp => console.log(resp));
+  commentAPI
+    .getId(comment.id)
+    .then(resp => {
+      dispatch(receiveIdComment(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const receiveCommentForPost = comment => ({
@@ -47,9 +62,14 @@ const receiveCommentForPost = comment => ({
 });
 
 export const getCommentPost = comment => dispatch => {
-  commentAPI.getPostIdComments(comment.id).then(resp => {
-    dispatch(receiveCommentForPost(resp));
-  }).catch(resp => console.log(resp));
+  commentAPI
+    .getPostIdComments(comment.id)
+    .then(resp => {
+      dispatch(receiveCommentForPost(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const sendVoteComment = comment => ({
@@ -58,9 +78,14 @@ const sendVoteComment = comment => ({
 });
 
 export const voteComment = comment => dispatch => {
-  commentAPI.vote(comment).then(resp => {
-    dispatch(sendVoteComment(resp));
-  }).catch(resp => console.log(resp));
+  commentAPI
+    .vote(comment)
+    .then(resp => {
+      dispatch(sendVoteComment(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const editSingle = comment => ({
@@ -69,9 +94,12 @@ const editSingle = comment => ({
 });
 
 export const editComment = comment => dispatch => {
-  commentAPI.edit(comment).then(resp => {
-    dispatch(editSingle(resp));
-  }).catch(resp => console.log(resp));
+  commentAPI
+    .edit(comment)
+    .then(resp => {
+      dispatch(editSingle(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
-
-

@@ -51,10 +51,21 @@ export const postsMock = [
 ];
 
 export const newPostMock = {
-    id: "6nlok",
-    timestamp: 1468479767190,
-    title: "Learning",
-    body: "Just kidding.",
-    author: "thingone",
-    category: "redux",
-}
+  id: "6nlok",
+  timestamp: 1468479767190,
+  title: "Learning",
+  body: "Just kidding.",
+  author: "thingone",
+  category: "redux"
+};
+
+export const categories = [
+  {
+    name: "react",
+    path: "react"
+  },
+  {
+    name: "redux",
+    path: "redux"
+  }
+];

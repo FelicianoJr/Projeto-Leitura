@@ -24,7 +24,7 @@ class App extends React.Component {
       <div>
         <NavBarContainer pushRoute={this.pushRoute} />
         <div className="container">
-          <PostContainer  />
+          <PostContainer />
         </div>
       </div>
     );
@@ -37,4 +37,5 @@ const mapDispatchToProps = dispatch => {
     categoryAll: () => dispatch(getCategoryAll())
   };
 };
+
 export default connect(null, mapDispatchToProps)(App);

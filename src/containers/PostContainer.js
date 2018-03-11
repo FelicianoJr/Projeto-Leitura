@@ -4,7 +4,7 @@ import CommentFormContainer from "./CommentFormContainer";
 import PostFormContainer from "./PostFormContainer";
 import CardDetail from "../components/CardDetail";
 import Modal from "react-modal";
-import { UUID } from "../mocks/UUID";
+import { UUID } from "../util/UUID";
 
 import {
   getCommentPost,
@@ -16,6 +16,18 @@ import {
   getPost,
   getComment
 } from "../actions";
+import ButtonClose from "../components/ButtonClose";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "60%",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)"
+  }
+};
 
 class PostContainer extends React.Component {
   constructor(props) {
@@ -33,6 +45,10 @@ class PostContainer extends React.Component {
       timestamp: Date.now()
     };
   };
+
+  componentDidMount() {
+    Modal.setAppElement("#root");
+  }
 
   getDownVote = data => {
     return { id: data.id, option: "downVote" };
@@ -68,7 +84,7 @@ class PostContainer extends React.Component {
                 data={post}
                 showComment={() => this.props.getCommentPost(post)}
                 newComment={() => {
-                  this.props.getParentId(this.addComment(post));
+                  this.props.getComment(this.addComment(post));
                   this.toggleComment();
                 }}
                 edit={() => {
@@ -104,11 +120,19 @@ class PostContainer extends React.Component {
 
         <Modal
           isOpen={this.state.modalComment}
-          contentLabel="Minimal Modal Example">
+          style={customStyles}
+          contentLabel="Minimal Modal Example"
+        >
+          <ButtonClose toggle={this.toggleComment} />
           <CommentFormContainer toggle={this.toggleComment} />
         </Modal>
 
-        <Modal isOpen={this.state.modal} contentLabel="Minimal Modal Example">
+        <Modal
+          isOpen={this.state.modal}
+          style={customStyles}
+          contentLabel="Minimal Modal Example"
+        >
+          <ButtonClose toggle={this.togglePost} />
           <PostFormContainer toggle={this.togglePost} />
         </Modal>
       </div>

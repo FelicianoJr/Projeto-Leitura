@@ -7,7 +7,12 @@ const receiveCategory = categories => ({
 });
 
 export const getCategoryAll = () => dispatch => {
-  categoryAPI.getAll().then(categories => {
-    dispatch(receiveCategory(categories));
-  });
+  categoryAPI
+    .getAll()
+    .then(categories => {
+      dispatch(receiveCategory(categories));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };

@@ -8,9 +8,8 @@ export const GET_POST_ID_COMMENT = "GET_POST_ID_COMMENT";
 
 export const COMMENT = "COMMENT";
 
-export const EDIT_POST_MODAL = "EDIT_POST_MODAL";
-export const EDIT_COMMENT_MODAL = "EDIT_COMMENT_MODAL";
-export const NEW_COMMENT_MODAL = "NEW_COMMENT_MODAL";
+export const POST_MODAL = "POST_MODAL";
+export const COMMENT_MODAL = "COMMENT_MODAL";
 
 export const VOTE_POST = "VOTE_POST";
 export const ADD_POST = "ADD_POST";
@@ -24,8 +23,5 @@ export const DECREASE_COUNT = "DECREASE_COUNT";
 export const INCREASE_COUNT = "INCREASE_COUNT";
 
 export const SORT_POST = "SORT_POST";
-
-export const FAILED = "FAILED";
-
 
 export const ALL_CATEGORY = "ALL_CATEGORY";

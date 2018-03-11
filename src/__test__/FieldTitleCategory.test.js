@@ -26,7 +26,7 @@ describe("<FieldTitleCategory/>", () => {
     expect(label.at(1).text()).toEqual("Categoria");
   });
 
-  it("should rende two length input ", () => {
+  it("should rende 2 length input ", () => {
     const { input } = setup();
     expect(input.length).toEqual(2);
   });

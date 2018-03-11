@@ -16,13 +16,22 @@ const setup = data => {
 
   return {
     component: component,
-    action,
-    action,
+    action: action,
     button: component.find("button")
   };
 };
 
 describe("<GroupButtonCard>", () => {
+  it("should rende 4 buttons when commentCount undefined", () => {
+    const { button } = setup({ commentCount: undefined });
+    expect(button.length).toEqual(4);
+  });
+
+  it("should rende 6 buttons when commentCount not undefined", () => {
+    const { button } = setup({ commentCount: 3 });
+    expect(button.length).toEqual(6);
+  });
+
   it("should simulate click showComment", () => {
     const { button, action } = setup({ commentCount: 2 });
     expect(button.at(0).type()).toEqual("button");
@@ -64,6 +73,4 @@ describe("<GroupButtonCard>", () => {
     button.at(5).simulate("click");
     expect(action.voteDown).toBeCalled();
   });
-
-  
 });

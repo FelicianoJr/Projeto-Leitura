@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 import ButtonSubmit from "../components/ButtonSubmit";
 
 const setup = (pristine, submitting) => {
+  
   const component = shallow(
     <ButtonSubmit pristine={pristine} submitting={submitting} />
   );
@@ -13,7 +14,7 @@ const setup = (pristine, submitting) => {
   };
 };
 
-describe("<FieldTitleCategory/>", () => {
+describe("<ButtonSubmit/>", () => {
   it("should rende  Button", () => {
     const { button } = setup();
     expect(button.type()).toEqual("button");

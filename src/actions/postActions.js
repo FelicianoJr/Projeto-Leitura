@@ -34,9 +34,14 @@ const add = post => ({
 });
 
 export const addPost = post => dispatch => {
-  postAPI.create(post).then(resp => {
-    dispatch(add(resp));
-  });
+  postAPI
+    .create(post)
+    .then(resp => {
+      dispatch(add(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const vote = post => ({
@@ -45,9 +50,14 @@ const vote = post => ({
 });
 
 export const votePost = post => dispatch => {
-  postAPI.vote(post).then(resp => {
-    dispatch(vote(resp));
-  });
+  postAPI
+    .vote(post)
+    .then(resp => {
+      dispatch(vote(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const receivePostCategory = post => ({
@@ -56,9 +66,14 @@ const receivePostCategory = post => ({
 });
 
 export const getPostAllCategory = post => dispatch => {
-  postAPI.getAllPostCategory(post).then(resp => {
-    dispatch(receivePostCategory(resp));
-  });
+  postAPI
+    .getAllPostCategory(post)
+    .then(resp => {
+      dispatch(receivePostCategory(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const deletePost = post => ({
@@ -67,9 +82,14 @@ const deletePost = post => ({
 });
 
 export const removePost = post => dispatch => {
-  postAPI.remove(post.id).then(resp => {
-    dispatch(deletePost(resp));
-  });
+  postAPI
+    .remove(post.id)
+    .then(resp => {
+      dispatch(deletePost(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const receiveAllPost = post => ({
@@ -78,9 +98,14 @@ const receiveAllPost = post => ({
 });
 
 export const getAllPost = () => dispatch => {
-  postAPI.getAllPost().then(post => {
-    dispatch(receiveAllPost(post));
-  });
+  postAPI
+    .getAllPost()
+    .then(post => {
+      dispatch(receiveAllPost(post));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const editSinglePost = post => ({
@@ -89,9 +114,14 @@ const editSinglePost = post => ({
 });
 
 export const editPost = post => dispatch => {
-  postAPI.edit(post).then(resp => {
-    dispatch(editSinglePost(resp));
-  });
+  postAPI
+    .edit(post)
+    .then(resp => {
+      dispatch(editSinglePost(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };
 
 const receiveIdPost = post => ({
@@ -100,7 +130,12 @@ const receiveIdPost = post => ({
 });
 
 export const getPostId = post => dispatch => {
-  postAPI.getId(post.id).then(resp => {
-    dispatch(receiveIdPost(resp));
-  });
+  postAPI
+    .getId(post.id)
+    .then(resp => {
+      dispatch(receiveIdPost(resp));
+    })
+    .catch(resp => {
+      throw new Error(resp);
+    });
 };

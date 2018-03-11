@@ -2,7 +2,7 @@ import React from "react";
 
 const NavbarMain = ({
   categories = [],
-  toggle,
+  newPost,
   pushRoute,
   sortPost,
   category
@@ -53,7 +53,7 @@ const NavbarMain = ({
         <button
           type="button"
           className="btn btn-outline-info btn-sm"
-          onClick={toggle}
+          onClick={newPost}
         >
           Nova Postagem
         </button>

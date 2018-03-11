@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardBodyMain/> snapchot  a cardDetail 1`] = `
+exports[`<CardDetail/> snapchot  a cardDetail 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -9,7 +9,7 @@ ShallowWrapper {
         Object {
             "author": "Feliciano",
             "body": "new situation",
-            "timestamp": 142536,
+            "timestamp": 1467166872634,
             "title": "Udacity",
             "voteScore": 4,
           }
@@ -43,7 +43,7 @@ ShallowWrapper {
 >
           <small>
                     <b>
-                              Pontuação
+                              Pontuação:
                     </b>
           </small>
            
@@ -63,7 +63,7 @@ ShallowWrapper {
                     </b>
                      em 
                     <b>
-                              142536
+                              28/06/2016
                     </b>
           </small>
 </div>,
@@ -72,7 +72,7 @@ ShallowWrapper {
                     Object {
                               "author": "Feliciano",
                               "body": "new situation",
-                              "timestamp": 142536,
+                              "timestamp": 1467166872634,
                               "title": "Udacity",
                               "voteScore": 4,
                             }
@@ -121,7 +121,7 @@ ShallowWrapper {
           "children": Array [
             <small>
               <b>
-                            Pontuação
+                            Pontuação:
               </b>
 </small>,
             " ",
@@ -141,7 +141,7 @@ ShallowWrapper {
               </b>
                em 
               <b>
-                            142536
+                            28/06/2016
               </b>
 </small>,
           ],
@@ -155,7 +155,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <b>
-                Pontuação
+                Pontuação:
 </b>,
             },
             "ref": null,
@@ -164,10 +164,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Pontuação",
+                "children": "Pontuação:",
               },
               "ref": null,
-              "rendered": "Pontuação",
+              "rendered": "Pontuação:",
               "type": "b",
             },
             "type": "small",
@@ -207,7 +207,7 @@ ShallowWrapper {
 </b>,
                 " em ",
                 <b>
-                  142536
+                  28/06/2016
 </b>,
               ],
               "className": "text-muted",
@@ -233,10 +233,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": 142536,
+                  "children": "28/06/2016",
                 },
                 "ref": null,
-                "rendered": 142536,
+                "rendered": "28/06/2016",
                 "type": "b",
               },
             ],
@@ -253,7 +253,7 @@ ShallowWrapper {
           "data": Object {
             "author": "Feliciano",
             "body": "new situation",
-            "timestamp": 142536,
+            "timestamp": 1467166872634,
             "title": "Udacity",
             "voteScore": 4,
           },
@@ -293,7 +293,7 @@ ShallowWrapper {
 >
             <small>
                         <b>
-                                    Pontuação
+                                    Pontuação:
                         </b>
             </small>
              
@@ -313,7 +313,7 @@ ShallowWrapper {
                         </b>
                          em 
                         <b>
-                                    142536
+                                    28/06/2016
                         </b>
             </small>
 </div>,
@@ -322,7 +322,7 @@ ShallowWrapper {
                         Object {
                                     "author": "Feliciano",
                                     "body": "new situation",
-                                    "timestamp": 142536,
+                                    "timestamp": 1467166872634,
                                     "title": "Udacity",
                                     "voteScore": 4,
                                   }
@@ -371,7 +371,7 @@ ShallowWrapper {
             "children": Array [
               <small>
                 <b>
-                                Pontuação
+                                Pontuação:
                 </b>
 </small>,
               " ",
@@ -391,7 +391,7 @@ ShallowWrapper {
                 </b>
                  em 
                 <b>
-                                142536
+                                28/06/2016
                 </b>
 </small>,
             ],
@@ -405,7 +405,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <b>
-                  Pontuação
+                  Pontuação:
 </b>,
               },
               "ref": null,
@@ -414,10 +414,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Pontuação",
+                  "children": "Pontuação:",
                 },
                 "ref": null,
-                "rendered": "Pontuação",
+                "rendered": "Pontuação:",
                 "type": "b",
               },
               "type": "small",
@@ -457,7 +457,7 @@ ShallowWrapper {
 </b>,
                   " em ",
                   <b>
-                    142536
+                    28/06/2016
 </b>,
                 ],
                 "className": "text-muted",
@@ -483,10 +483,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": 142536,
+                    "children": "28/06/2016",
                   },
                   "ref": null,
-                  "rendered": 142536,
+                  "rendered": "28/06/2016",
                   "type": "b",
                 },
               ],
@@ -503,7 +503,7 @@ ShallowWrapper {
             "data": Object {
               "author": "Feliciano",
               "body": "new situation",
-              "timestamp": 142536,
+              "timestamp": 1467166872634,
               "title": "Udacity",
               "voteScore": 4,
             },
