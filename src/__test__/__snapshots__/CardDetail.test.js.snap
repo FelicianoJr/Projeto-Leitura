@@ -77,6 +77,12 @@ ShallowWrapper {
                               "voteScore": 4,
                             }
           }
+          edit={undefined}
+          newComment={undefined}
+          remove={undefined}
+          showComment={undefined}
+          voteDown={undefined}
+          voteUp={undefined}
 />,
       ],
       "className": "card-body",
@@ -251,6 +257,12 @@ ShallowWrapper {
             "title": "Udacity",
             "voteScore": 4,
           },
+          "edit": undefined,
+          "newComment": undefined,
+          "remove": undefined,
+          "showComment": undefined,
+          "voteDown": undefined,
+          "voteUp": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -315,6 +327,12 @@ ShallowWrapper {
                                     "voteScore": 4,
                                   }
             }
+            edit={undefined}
+            newComment={undefined}
+            remove={undefined}
+            showComment={undefined}
+            voteDown={undefined}
+            voteUp={undefined}
 />,
         ],
         "className": "card-body",
@@ -489,6 +507,12 @@ ShallowWrapper {
               "title": "Udacity",
               "voteScore": 4,
             },
+            "edit": undefined,
+            "newComment": undefined,
+            "remove": undefined,
+            "showComment": undefined,
+            "voteDown": undefined,
+            "voteUp": undefined,
           },
           "ref": null,
           "rendered": null,

@@ -12,7 +12,7 @@ const Root = ({ store }) => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={App} />
-          <Route path="/home/:category?" component={CategoryContainer} />
+          <Route path="/category/:category?" component={CategoryContainer} />
         </Switch>
       </BrowserRouter>
     </Provider>

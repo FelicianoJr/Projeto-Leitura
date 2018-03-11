@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 
   pushRoute = e => {
-    this.props.history.push(`/home/${e.target.value}`);
+    this.props.history.push(`/category/${e.target.value}`);
     e.preventDefault();
   };
 

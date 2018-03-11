@@ -3,7 +3,6 @@ export {
   addPost,
   editPost,
   getAllPost,
-  getPost,
   getPostAllCategory,
   getPostId,
   removePost,
@@ -14,9 +13,8 @@ export {
   addComment,
   deleteComment,
   editComment,
-  getComment,
   getCommentPost,
   getIdComment,
-  voteComment,
-  getParentId
+  voteComment
 } from "./commentActions";
+export { getComment, getParentId,getPost } from "./editModalActions"

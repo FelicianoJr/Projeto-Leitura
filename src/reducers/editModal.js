@@ -4,7 +4,7 @@ import {
   NEW_COMMENT_MODAL
 } from "../constants/ActionTypes";
 
-const editor = (state = [], action) => {
+const editModal = (state = [], action) => {
   switch (action.type) {
     case EDIT_POST_MODAL:
       return { post: action.post };
@@ -17,4 +17,4 @@ const editor = (state = [], action) => {
   }
 };
 
-export default editor;
+export default editModal;

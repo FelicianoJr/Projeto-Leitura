@@ -19,8 +19,13 @@ export const DELETE_POST = "DELETE_POST";
 export const GET_ALL_POST_CATEGORY = "GET_ALL_POST_CATEGORY";
 export const GET_ALL_POST = "GET_ALL_POST";
 export const GET_POST_ID = "GET_POST_ID";
-export const COUNT_COMMENT_POST = "COUNT_COMMENT_POST";
+
+export const DECREASE_COUNT = "DECREASE_COUNT";
+export const INCREASE_COUNT = "INCREASE_COUNT";
 
 export const SORT_POST = "SORT_POST";
+
+export const FAILED = "FAILED";
+
 
 export const ALL_CATEGORY = "ALL_CATEGORY";

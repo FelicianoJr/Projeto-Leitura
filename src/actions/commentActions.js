@@ -1,6 +1,11 @@
 import commentAPI from "../api/commentAPI";
 import * as types from "../constants/ActionTypes";
-import { getPost, getCountComment } from "./postActions";
+import {
+  getPost,
+  decreaseCountComment,
+  increaseCountComment
+} from "./postActions";
+
 const removeComment = comment => ({
   type: types.DELETE_COMMENT,
   comment
@@ -9,8 +14,8 @@ const removeComment = comment => ({
 export const deleteComment = comment => dispatch => {
   commentAPI.remove(comment.id).then(resp => {
     dispatch(removeComment(resp));
-    dispatch(getCountComment(resp.parentId));
-  });
+    dispatch(decreaseCountComment(resp.parentId));
+  }).catch(resp => dispatch());
 };
 
 const add = comment => ({
@@ -21,7 +26,8 @@ const add = comment => ({
 export const addComment = comment => dispatch => {
   commentAPI.create(comment).then(resp => {
     dispatch(add(resp));
-  });
+    dispatch(increaseCountComment(comment.parentId));
+  }).catch(resp => console.log(resp));
 };
 
 const receiveIdComment = comment => ({
@@ -32,7 +38,7 @@ const receiveIdComment = comment => ({
 export const getIdComment = comment => dispatch => {
   commentAPI.getId(comment.id).then(resp => {
     dispatch(receiveIdComment(resp));
-  });
+  }).catch(resp => console.log(resp));
 };
 
 const receiveCommentForPost = comment => ({
@@ -43,7 +49,7 @@ const receiveCommentForPost = comment => ({
 export const getCommentPost = comment => dispatch => {
   commentAPI.getPostIdComments(comment.id).then(resp => {
     dispatch(receiveCommentForPost(resp));
-  });
+  }).catch(resp => console.log(resp));
 };
 
 const sendVoteComment = comment => ({
@@ -54,7 +60,7 @@ const sendVoteComment = comment => ({
 export const voteComment = comment => dispatch => {
   commentAPI.vote(comment).then(resp => {
     dispatch(sendVoteComment(resp));
-  });
+  }).catch(resp => console.log(resp));
 };
 
 const editSingle = comment => ({
@@ -65,22 +71,7 @@ const editSingle = comment => ({
 export const editComment = comment => dispatch => {
   commentAPI.edit(comment).then(resp => {
     dispatch(editSingle(resp));
-  });
+  }).catch(resp => console.log(resp));
 };
 
-const receiveComment = comment => ({
-  type: types.EDIT_COMMENT_MODAL,
-  comment
-});
-export const getComment = comment => dispatch => {
-  dispatch(receiveComment(comment));
-};
 
-const receiveIdParent = comment => ({
-  type: types.NEW_COMMENT_MODAL,
-  comment
-});
-
-export const getParentId = comment => dispatch => {
-  dispatch(receiveIdParent(comment));
-};

@@ -1,35 +1,40 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const GroupButtonCard = props => {
-  const {
-    showComment,
-    newComment,
-    edit,
-    remove,
-    voteUp,
-    voteDown,
-    data
-  } = props;
-
+const GroupButtonCard = ({
+  showComment,
+  newComment,
+  edit,
+  remove,
+  voteUp,
+  voteDown,
+  data
+}) => {
+  const buttonsShow = data.commentCount == undefined;
   return (
     <div>
-      <button
-        id="find"
-        type="button"
-        className="btn btn-outline-info btn-sm mr-sm-2"
-        onClick={showComment}
-      >
-        Visualisar Comentários{" "}
-        <span className="badge badge-light">{data.commentCount}</span>
-      </button>
-      <button
-        id="edit"
-        type="button"
-        className="btn btn-outline-info btn-sm mr-sm-2"
-        onClick={newComment}
-      >
-        Adicionar Comentário
-      </button>
+      {!buttonsShow && (
+        <button
+          id="show"
+          type="button"
+          className="btn btn-outline-info btn-sm mr-sm-2"
+          onClick={showComment}
+        >
+          Visualisar Comentários{" "}
+          <span className="badge badge-light">{data.commentCount}</span>
+        </button>
+      )}
+
+      {!buttonsShow && (
+        <button
+          id="edit"
+          type="button"
+          className="btn btn-outline-info btn-sm mr-sm-2"
+          onClick={newComment}
+        >
+          Adicionar Comentário
+        </button>
+      )}
       <button
         id="edit"
         type="button"
@@ -64,6 +69,15 @@ const GroupButtonCard = props => {
       </button>
     </div>
   );
+};
+
+GroupButtonCard.protoTypes = {
+  showComment: PropTypes.func,
+  newComment: PropTypes.func,
+  edit: PropTypes.func,
+  remove: PropTypes.func,
+  voteUp: PropTypes.func,
+  voteDown: PropTypes.func
 };
 
 export default GroupButtonCard;

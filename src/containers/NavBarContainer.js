@@ -7,15 +7,17 @@ import Modal from "react-modal";
 
 import PostFormContainer from "./PostFormContainer";
 
-Modal.setAppElement("#root");
-
 class NavBarContainer extends React.PureComponent {
-
+  
   constructor(props) {
     super(props);
     this.state = {
       modal: false
     };
+  }
+  
+  componentDidMount(){
+    Modal.setAppElement("#root");
   }
 
   toggle = () => {

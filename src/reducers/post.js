@@ -6,7 +6,8 @@ import {
   VOTE_POST,
   GET_ALL_POST,
   SORT_POST,
-  COUNT_COMMENT_POST
+  DECREASE_COUNT,
+  INCREASE_COUNT
 } from "../constants/ActionTypes";
 
 const post = (state = [], action) => {
@@ -57,11 +58,18 @@ const post = (state = [], action) => {
               }
             : post
       );
-    case COUNT_COMMENT_POST:
+    case DECREASE_COUNT:
       return state.map(
         post =>
           post.id === action.id
             ? { ...post, commentCount: post.commentCount - 1 }
+            : post
+      );
+    case INCREASE_COUNT:
+      return state.map(
+        post =>
+          post.id === action.id
+            ? { ...post, commentCount: post.commentCount + 1 }
             : post
       );
 

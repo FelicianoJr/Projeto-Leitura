@@ -10,22 +10,22 @@ export const sortPost = atributes => dispatch => {
   dispatch(sort(atributes));
 };
 
-const receivePost = post => ({
-  type: types.EDIT_POST_MODAL,
-  post
-});
-
-export const getPost = post => dispatch => {
-  dispatch(receivePost(post));
-};
-
-const receiveCount = id => ({
-  type: types.COUNT_COMMENT_POST,
+const decrease = id => ({
+  type: types.DECREASE_COUNT,
   id
 });
 
-export const getCountComment = id => dispatch => {
-  dispatch(receiveCount(id));
+export const decreaseCountComment = id => dispatch => {
+  dispatch(decrease(id));
+};
+
+const increase = id => ({
+  type: types.INCREASE_COUNT,
+  id
+});
+
+export const increaseCountComment = id => dispatch => {
+  dispatch(increase(id));
 };
 
 const add = post => ({
@@ -36,7 +36,6 @@ const add = post => ({
 export const addPost = post => dispatch => {
   postAPI.create(post).then(resp => {
     dispatch(add(resp));
-    dispatch(getPost({}));
   });
 };
 

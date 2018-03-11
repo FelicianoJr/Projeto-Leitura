@@ -63,7 +63,7 @@ class PostContainer extends React.Component {
       <div>
         {posts &&
           posts.map(post => (
-            <div key={post.id} className="card mb-2 mx-2">
+            <div key={post.id} className="card mb-2 mx-2 mt-2">
               <CardDetail
                 data={post}
                 showComment={() => this.props.getCommentPost(post)}
@@ -104,13 +104,12 @@ class PostContainer extends React.Component {
 
         <Modal
           isOpen={this.state.modalComment}
-          contentLabel="Minimal Modal Example"
-        >
+          contentLabel="Minimal Modal Example">
           <CommentFormContainer toggle={this.toggleComment} />
         </Modal>
 
         <Modal isOpen={this.state.modal} contentLabel="Minimal Modal Example">
-          <PostFormContainer togglePost={this.togglePost} />
+          <PostFormContainer toggle={this.togglePost} />
         </Modal>
       </div>
     );

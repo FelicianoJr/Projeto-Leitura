@@ -25,6 +25,7 @@ const NavbarMain = ({
               id="category"
               className="form-control form-control-sm"
               onChange={pushRoute}
+              defaultValue=""
             >
               <option value="" disabled hidden>
                 Escolha uma categoria
@@ -43,9 +44,6 @@ const NavbarMain = ({
             className="form-control form-control-sm"
             onChange={sortPost}
           >
-            <option value="" disabled hidden>
-              Ordenar por
-            </option>
             <option value="SCORE_BIGGER">Maior Pontuação</option>
             <option value="SCORE_SMALLER">Menor Pontuação</option>
             <option value="RECENT_POST">Postagens Recentes</option>

@@ -46,7 +46,7 @@ const mapDispatchToProps = dispatch => {
 
 CommentFormContainer = connect(
   state => ({
-    initialValues: state.editor.comment
+    initialValues: state.editModal.comment
   }),
   mapDispatchToProps
 )(CommentFormContainer);

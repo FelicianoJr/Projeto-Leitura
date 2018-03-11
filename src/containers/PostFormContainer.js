@@ -8,28 +8,32 @@ import { editPost, addPost } from "../actions";
 import { UUID } from "../mocks/UUID";
 
 let PostFormContainer = props => {
-  const { handleSubmit, togglePost, pristine, submitting, initialValues } = props;
-  
+  const {
+    error,
+    handleSubmit,
+    toggle,
+    pristine,
+    submitting,
+    initialValues
+  } = props;
+
   const submit = values => {
     if (initialValues.body) {
       props.editPost(values);
     } else {
       props.addPost(values);
     }
-    togglePost();
+    toggle();
   };
-  
   return (
     <div>
       <form onSubmit={handleSubmit(submit)}>
         <div className="modal-body">
-          <FieldTitleCategory />
+          <FieldTitleCategory  />
           <FieldBodyAuthor />
         </div>
         <div className="modal-footer">
-          <ButtonSubmit
-           pristine={pristine} 
-           submitting={submitting} />
+          <ButtonSubmit pristine={pristine} submitting={submitting} />
         </div>
       </form>
     </div>
@@ -54,7 +58,7 @@ const mapDispatchToProps = dispatch => {
 
 PostFormContainer = connect(
   state => ({
-    initialValues: state.editor.post
+    initialValues: state.editModal.post
   }),
   mapDispatchToProps
 )(PostFormContainer);
