@@ -1,6 +1,5 @@
 import React from "react";
-import PostContainer from "./PostContainer";
-import { sortPost, getCategoryAll } from "../actions";
+import { sortPost } from "../actions";
 import { connect } from "react-redux";
 import NavBarMain from "../components/NavBarMain";
 import Modal from "react-modal";

@@ -3,7 +3,6 @@ import { shallow } from "enzyme";
 import ButtonSubmit from "../components/ButtonSubmit";
 
 const setup = (pristine, submitting) => {
-  
   const component = shallow(
     <ButtonSubmit pristine={pristine} submitting={submitting} />
   );
@@ -28,5 +27,10 @@ describe("<ButtonSubmit/>", () => {
   it("should rende disabled when false", () => {
     const { button } = setup(false, false);
     expect(button.prop("disabled")).toEqual(false);
+  });
+
+  it("should component Snapshot", () => {
+    const { component } = setup();
+    expect(component).toMatchSnapshot();
   });
 });

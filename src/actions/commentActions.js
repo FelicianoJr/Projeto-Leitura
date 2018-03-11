@@ -1,10 +1,6 @@
 import commentAPI from "../api/commentAPI";
 import * as types from "../constants/ActionTypes";
-import {
-  getPost,
-  decreaseCountComment,
-  increaseCountComment
-} from "./postActions";
+import { decreaseCountComment, increaseCountComment } from "./postActions";
 
 const removeComment = comment => ({
   type: types.DELETE_COMMENT,

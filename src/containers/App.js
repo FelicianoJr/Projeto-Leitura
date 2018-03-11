@@ -5,9 +5,6 @@ import { connect } from "react-redux";
 import { getAllPost, getCategoryAll } from "../actions";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.getAllPost();

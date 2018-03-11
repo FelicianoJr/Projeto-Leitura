@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import App from "../containers/App";
 import CategoryContainer from "../containers/CategoryContainer";
-import CommentFormContainer from "../containers/CommentFormContainer";
 
 import { Provider } from "react-redux";
 

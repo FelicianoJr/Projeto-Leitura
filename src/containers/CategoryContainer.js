@@ -6,9 +6,6 @@ import NavBarContainer from "./NavBarContainer";
 
 class CategoryContainer extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
 
   nameCategory = () => this.props.match.params.category;
 

@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FieldBodyAuthor/> should component Snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FieldBodyAuthor />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="form-group"
+>
+          <label>
+                    Autor
+          </label>
+          <Field
+                    className="form-control"
+                    component="input"
+                    id="author"
+                    name="author"
+                    type="text"
+          />
+</div>,
+        <div
+          className="form-group"
+>
+          <label>
+                    Descrição
+          </label>
+          <Field
+                    className="form-control"
+                    component="textarea"
+                    id="body"
+                    name="body"
+                    type="text"
+          />
+</div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label>
+              Autor
+</label>,
+            <Field
+              className="form-control"
+              component="input"
+              id="author"
+              name="author"
+              type="text"
+/>,
+          ],
+          "className": "form-group",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Autor",
+            },
+            "ref": null,
+            "rendered": "Autor",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "form-control",
+              "component": "input",
+              "id": "author",
+              "name": "author",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label>
+              Descrição
+</label>,
+            <Field
+              className="form-control"
+              component="textarea"
+              id="body"
+              name="body"
+              type="text"
+/>,
+          ],
+          "className": "form-group",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Descrição",
+            },
+            "ref": null,
+            "rendered": "Descrição",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "form-control",
+              "component": "textarea",
+              "id": "body",
+              "name": "body",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="form-group"
+>
+            <label>
+                        Autor
+            </label>
+            <Field
+                        className="form-control"
+                        component="input"
+                        id="author"
+                        name="author"
+                        type="text"
+            />
+</div>,
+          <div
+            className="form-group"
+>
+            <label>
+                        Descrição
+            </label>
+            <Field
+                        className="form-control"
+                        component="textarea"
+                        id="body"
+                        name="body"
+                        type="text"
+            />
+</div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label>
+                Autor
+</label>,
+              <Field
+                className="form-control"
+                component="input"
+                id="author"
+                name="author"
+                type="text"
+/>,
+            ],
+            "className": "form-group",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Autor",
+              },
+              "ref": null,
+              "rendered": "Autor",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": "form-control",
+                "component": "input",
+                "id": "author",
+                "name": "author",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label>
+                Descrição
+</label>,
+              <Field
+                className="form-control"
+                component="textarea"
+                id="body"
+                name="body"
+                type="text"
+/>,
+            ],
+            "className": "form-group",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Descrição",
+              },
+              "ref": null,
+              "rendered": "Descrição",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": "form-control",
+                "component": "textarea",
+                "id": "body",
+                "name": "body",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

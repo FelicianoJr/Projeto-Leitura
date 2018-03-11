@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FieldTitleCategory/> should component Snapshot  1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FieldTitleCategory />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="form-group"
+>
+          <label>
+                    Titulo
+          </label>
+          <Field
+                    className="form-control"
+                    component="input"
+                    id="title"
+                    name="title"
+                    type="text"
+          />
+</div>,
+        <div
+          className="form-group"
+>
+          <label>
+                    Categoria
+          </label>
+          <Field
+                    className="form-control"
+                    component="input"
+                    id="category"
+                    name="category"
+                    type="text"
+          />
+</div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label>
+              Titulo
+</label>,
+            <Field
+              className="form-control"
+              component="input"
+              id="title"
+              name="title"
+              type="text"
+/>,
+          ],
+          "className": "form-group",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Titulo",
+            },
+            "ref": null,
+            "rendered": "Titulo",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "form-control",
+              "component": "input",
+              "id": "title",
+              "name": "title",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label>
+              Categoria
+</label>,
+            <Field
+              className="form-control"
+              component="input"
+              id="category"
+              name="category"
+              type="text"
+/>,
+          ],
+          "className": "form-group",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Categoria",
+            },
+            "ref": null,
+            "rendered": "Categoria",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "className": "form-control",
+              "component": "input",
+              "id": "category",
+              "name": "category",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="form-group"
+>
+            <label>
+                        Titulo
+            </label>
+            <Field
+                        className="form-control"
+                        component="input"
+                        id="title"
+                        name="title"
+                        type="text"
+            />
+</div>,
+          <div
+            className="form-group"
+>
+            <label>
+                        Categoria
+            </label>
+            <Field
+                        className="form-control"
+                        component="input"
+                        id="category"
+                        name="category"
+                        type="text"
+            />
+</div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label>
+                Titulo
+</label>,
+              <Field
+                className="form-control"
+                component="input"
+                id="title"
+                name="title"
+                type="text"
+/>,
+            ],
+            "className": "form-group",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Titulo",
+              },
+              "ref": null,
+              "rendered": "Titulo",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": "form-control",
+                "component": "input",
+                "id": "title",
+                "name": "title",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label>
+                Categoria
+</label>,
+              <Field
+                className="form-control"
+                component="input"
+                id="category"
+                name="category"
+                type="text"
+/>,
+            ],
+            "className": "form-group",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Categoria",
+              },
+              "ref": null,
+              "rendered": "Categoria",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "className": "form-control",
+                "component": "input",
+                "id": "category",
+                "name": "category",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

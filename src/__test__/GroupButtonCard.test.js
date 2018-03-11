@@ -73,4 +73,9 @@ describe("<GroupButtonCard>", () => {
     button.at(5).simulate("click");
     expect(action.voteDown).toBeCalled();
   });
+
+  it("should component Snapshot", () => {
+    const { component } = setup({ commentCount: 2 });
+    expect(component).toMatchSnapshot();
+  });
 });

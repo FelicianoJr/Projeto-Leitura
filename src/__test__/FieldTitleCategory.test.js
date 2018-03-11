@@ -14,7 +14,6 @@ const setup = () => {
 };
 
 describe("<FieldTitleCategory/>", () => {
-
   it("should rende  two <FormGroup>", () => {
     const { formGroup } = setup();
     expect(formGroup.length).toEqual(2);
@@ -29,5 +28,10 @@ describe("<FieldTitleCategory/>", () => {
   it("should rende 2 length input ", () => {
     const { input } = setup();
     expect(input.length).toEqual(2);
+  });
+
+  it("should component Snapshot ", () => {
+    const { component } = setup();
+    expect(component).toMatchSnapshot();
   });
 });

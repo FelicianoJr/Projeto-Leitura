@@ -29,4 +29,9 @@ describe("<FieldBodyAuthor/>", () => {
     const { input } = setup();
     expect(input.length).toEqual(2);
   });
+
+  it("should component Snapshot", () => {
+    const { component } = setup();
+    expect(component).toMatchSnapshot();
+  });
 });

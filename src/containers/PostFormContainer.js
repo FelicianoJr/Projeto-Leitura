@@ -5,11 +5,9 @@ import FieldBodyAuthor from "../components/FieldBodyAuthor";
 import FieldTitleCategory from "../components/FieldTitleCategory";
 import ButtonSubmit from "../components/ButtonSubmit";
 import { editPost, addPost } from "../actions";
-import ButtonClose from "../components/ButtonClose";
 
 let PostFormContainer = props => {
   const {
-    error,
     handleSubmit,
     toggle,
     pristine,

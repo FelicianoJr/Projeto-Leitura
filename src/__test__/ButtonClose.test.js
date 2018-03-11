@@ -26,4 +26,9 @@ describe("<ButtonClose/>", () => {
     button.simulate("click");
     expect(action.toggle).toBeCalled();
   });
+
+  it("should component Snapshot", () => {
+    const { component } = setup();
+    expect(component).toMatchSnapshot();
+  });
 });

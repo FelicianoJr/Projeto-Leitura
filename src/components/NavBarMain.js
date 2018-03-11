@@ -7,16 +7,16 @@ const NavbarMain = ({
   sortPost,
   category
 }) => {
- 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
       {!category ? (
         <a className="navbar-brand" href="/">
-          Project Udacity
+          Projeto Udacity Leitura
         </a>
       ) : (
-        <a className=" close-search" href="/" />
-
+        <a className=" close-search" href="/">
+          {category}
+        </a>
       )}
       <form className="form-inline ">
         <div className="mr-sm-2">

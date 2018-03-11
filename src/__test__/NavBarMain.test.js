@@ -24,12 +24,6 @@ const setup = (categories = []) => {
 };
 
 describe("<NavBarMain/>", () => {
-
-  it("shold render one <a>", () => {
-    const { a } = setup();
-    expect(a.length).toEqual(1);
-  });
-
   it("should render equal text <option>", () => {
     const category = [
       {
@@ -54,7 +48,7 @@ describe("<NavBarMain/>", () => {
   });
 
   it("should call PushRoute", () => {
-    const { actions, select,component } = setup();
+    const { actions, select, component } = setup();
     select.at(0).simulate("change", { target: { value: "100" } });
     expect(actions.pushRoute).toBeCalled();
   });
@@ -64,10 +58,20 @@ describe("<NavBarMain/>", () => {
     button.simulate("click");
     expect(actions.newPost).toBeCalled();
   });
+
+  it("shold render one <a>", () => {
+    const { a } = setup();
+    expect(a.length).toEqual(1);
+  });
+
+  it("shold component snapshot", () => {
+    const { component } = setup();
+    expect(component).toMatchSnapshot();
+  });
 });
 //example change value
 // const wrapper = shallow(<Login />);
 //    wrapper.find('#password').simulate('change', {target: {name: 'password', value: 'cats'}});
-   
+
 //    expect(wrapper.state('password')).toEqual('cats');
 //   })
