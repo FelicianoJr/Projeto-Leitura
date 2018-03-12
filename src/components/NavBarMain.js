@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const NavbarMain = ({
   categories = [],
@@ -7,16 +9,22 @@ const NavbarMain = ({
   sortPost,
   category
 }) => {
+  const categoryUpper = () =>
+    category.charAt(0).toUpperCase() + category.slice(1);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
       {!category ? (
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand disabled" href="#">
           Projeto Udacity Leitura
         </a>
       ) : (
-        <a className=" close-search" href="/">
-          {category}
-        </a>
+        <Link className="close-search d-inline-block align-top" to="/" />
+      )}
+      {category && (
+        <span class="badge navbar-brand badge-info">
+          Categoria {categoryUpper()}
+        </span>
       )}
       <form className="form-inline ">
         <div className="mr-sm-2">
@@ -30,8 +38,8 @@ const NavbarMain = ({
               <option value="" disabled hidden>
                 Escolha uma categoria
               </option>
-              {categories.map(category => (
-                <option key={category.name} value={category.patch}>
+              {categories.map((category, index) => (
+                <option key={index} value={category.patch}>
                   {category.name}
                 </option>
               ))}
@@ -60,6 +68,14 @@ const NavbarMain = ({
       </form>
     </nav>
   );
+};
+
+NavbarMain.propTypes = {
+  categories: PropTypes.array,
+  pushRoute: PropTypes.func,
+  newPost: PropTypes.func,
+  sortPost: PropTypes.func,
+  category: PropTypes.string
 };
 
 export default NavbarMain;

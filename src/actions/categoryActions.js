@@ -12,7 +12,5 @@ export const getCategoryAll = () => dispatch => {
     .then(categories => {
       dispatch(receiveCategory(categories));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(e=> console.log(e));
 };

@@ -103,9 +103,7 @@ export const getAllPost = () => dispatch => {
     .then(post => {
       dispatch(receiveAllPost(post));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(resp => console.log(resp));
 };
 
 const editSinglePost = post => ({

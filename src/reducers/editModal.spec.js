@@ -1,7 +1,7 @@
 import * as types from "../constants/ActionTypes";
 import editModal from "./editModal";
 
-describe("reducer EDITMODAL", () => {
+describe("reducer edit modal", () => {
   it("should rende POST_MODAL", () => {
     expect(
       editModal([], {

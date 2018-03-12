@@ -5,10 +5,10 @@ import PostFormContainer from "./PostFormContainer";
 import CardDetail from "../components/CardDetail";
 import Modal from "react-modal";
 import { UUID } from "../util/UUID";
+import ButtonClose from "../components/ButtonClose";
 
 import {
   getCommentPost,
-  getParentId,
   deleteComment,
   removePost,
   voteComment,
@@ -16,7 +16,6 @@ import {
   getPost,
   getComment
 } from "../actions";
-import ButtonClose from "../components/ButtonClose";
 
 const customStyles = {
   content: {
@@ -75,6 +74,7 @@ class PostContainer extends React.Component {
 
   render() {
     const { posts, comments } = this.props;
+
     return (
       <div>
         {posts &&
@@ -118,20 +118,12 @@ class PostContainer extends React.Component {
             </div>
           ))}
 
-        <Modal
-          isOpen={this.state.modalComment}
-          style={customStyles}
-          contentLabel="Minimal Modal Example"
-        >
+        <Modal isOpen={this.state.modalComment} style={customStyles}>
           <ButtonClose toggle={this.toggleComment} />
           <CommentFormContainer toggle={this.toggleComment} />
         </Modal>
 
-        <Modal
-          isOpen={this.state.modal}
-          style={customStyles}
-          contentLabel="Minimal Modal Example"
-        >
+        <Modal isOpen={this.state.modal} style={customStyles}>
           <ButtonClose toggle={this.togglePost} />
           <PostFormContainer toggle={this.togglePost} />
         </Modal>
@@ -146,7 +138,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, {
-  getParentId,
   getPost,
   removePost,
   votePost,
