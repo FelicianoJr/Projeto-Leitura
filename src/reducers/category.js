@@ -4,7 +4,6 @@ const categories = (state = [], action) => {
   switch (action.type) {
     case ALL_CATEGORY:
       return [...action.categories];
-      
     default:
       return state;
   }

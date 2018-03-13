@@ -4,7 +4,9 @@ exports[`<FieldTitleCategory/> should component Snapshot  1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <FieldTitleCategory />,
+  Symbol(enzyme.__unrendered__): <FieldTitleCategory
+    categories={Array []}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

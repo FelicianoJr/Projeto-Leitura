@@ -13,7 +13,6 @@ const categories = [
 ];
 
 describe("reducers CATEGORY", () => {
-
   it("should handle ALL_CATEGORY", () => {
     expect(
       category([], {
@@ -31,4 +30,14 @@ describe("reducers CATEGORY", () => {
       }
     ]);
   });
+
+  it("should handle ALL_CATEGORY Empty", () => {
+    expect(
+      category(categories, {
+        type: types.ALL_CATEGORY,
+        categories: []
+      })
+    ).toEqual([]);
+  });
+
 });
