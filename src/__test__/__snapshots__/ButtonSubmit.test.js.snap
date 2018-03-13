@@ -21,7 +21,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <button
-        className="btn btn-primary"
+        className="btn btn-dark btn-sm"
         disabled={undefined}
         type="submit"
 >
@@ -35,7 +35,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "Salvar",
-        "className": "btn btn-primary",
+        "className": "btn btn-dark btn-sm",
         "disabled": undefined,
         "type": "submit",
       },
@@ -52,7 +52,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <button
-          className="btn btn-primary"
+          className="btn btn-dark btn-sm"
           disabled={undefined}
           type="submit"
 >
@@ -66,7 +66,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Salvar",
-          "className": "btn btn-primary",
+          "className": "btn btn-dark btn-sm",
           "disabled": undefined,
           "type": "submit",
         },

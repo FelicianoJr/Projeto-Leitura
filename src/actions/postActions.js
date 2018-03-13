@@ -39,9 +39,7 @@ export const addPost = post => dispatch => {
     .then(resp => {
       dispatch(add(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const vote = post => ({
@@ -55,9 +53,7 @@ export const votePost = post => dispatch => {
     .then(resp => {
       dispatch(vote(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const receivePostCategory = post => ({
@@ -71,9 +67,7 @@ export const getPostAllCategory = post => dispatch => {
     .then(resp => {
       dispatch(receivePostCategory(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const deletePost = post => ({
@@ -87,9 +81,7 @@ export const removePost = post => dispatch => {
     .then(resp => {
       dispatch(deletePost(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const receiveAllPost = post => ({
@@ -103,7 +95,7 @@ export const getAllPost = () => dispatch => {
     .then(post => {
       dispatch(receiveAllPost(post));
     })
-    .catch(resp => console.log(resp));
+    .catch(error => console.log(error));
 };
 
 const editSinglePost = post => ({
@@ -117,9 +109,7 @@ export const editPost = post => dispatch => {
     .then(resp => {
       dispatch(editSinglePost(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const receiveIdPost = post => ({
@@ -133,7 +123,5 @@ export const getPostId = post => dispatch => {
     .then(resp => {
       dispatch(receiveIdPost(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };

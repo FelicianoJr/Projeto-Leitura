@@ -40,11 +40,12 @@ ShallowWrapper {
           </label>
           <Field
                     className="form-control"
-                    component="input"
+                    component="select"
                     id="category"
                     name="category"
-                    type="text"
-          />
+          >
+                    <option />
+          </Field>
 </div>,
       ],
     },
@@ -111,11 +112,12 @@ ShallowWrapper {
 </label>,
             <Field
               className="form-control"
-              component="input"
+              component="select"
               id="category"
               name="category"
-              type="text"
-/>,
+>
+              <option />
+</Field>,
           ],
           "className": "form-group",
         },
@@ -137,14 +139,27 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "children": Array [
+                <option />,
+                Array [],
+              ],
               "className": "form-control",
-              "component": "input",
+              "component": "select",
               "id": "category",
               "name": "category",
-              "type": "text",
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "option",
+              },
+            ],
             "type": [Function],
           },
         ],
@@ -182,11 +197,12 @@ ShallowWrapper {
             </label>
             <Field
                         className="form-control"
-                        component="input"
+                        component="select"
                         id="category"
                         name="category"
-                        type="text"
-            />
+            >
+                        <option />
+            </Field>
 </div>,
         ],
       },
@@ -253,11 +269,12 @@ ShallowWrapper {
 </label>,
               <Field
                 className="form-control"
-                component="input"
+                component="select"
                 id="category"
                 name="category"
-                type="text"
-/>,
+>
+                <option />
+</Field>,
             ],
             "className": "form-group",
           },
@@ -279,14 +296,27 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "children": Array [
+                  <option />,
+                  Array [],
+                ],
                 "className": "form-control",
-                "component": "input",
+                "component": "select",
                 "id": "category",
                 "name": "category",
-                "type": "text",
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "option",
+                },
+              ],
               "type": [Function],
             },
           ],

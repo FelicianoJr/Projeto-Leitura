@@ -1,7 +1,16 @@
 import * as types from "../constants/ActionTypes";
 import category from "./category";
-import {categories} from "../mocks/mock"
 
+const categories = [
+  {
+    name: "react",
+    path: "react"
+  },
+  {
+    name: "redux",
+    path: "redux"
+  }
+];
 
 describe("reducers CATEGORY", () => {
 

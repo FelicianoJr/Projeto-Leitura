@@ -31,7 +31,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <button
-          className="btn btn-outline-info btn-sm mr-sm-2"
+          className="btn btn-outline-dark btn-sm mr-sm-2"
           id="show"
           onClick={[Function]}
           type="button"
@@ -45,7 +45,7 @@ ShallowWrapper {
           </span>
 </button>,
         <button
-          className="btn btn-outline-info btn-sm mr-sm-2"
+          className="btn btn-outline-dark btn-sm mr-sm-2"
           id="edit"
           onClick={[Function]}
           type="button"
@@ -53,7 +53,7 @@ ShallowWrapper {
           Adicionar Comentário
 </button>,
         <button
-          className="btn btn-outline-info btn-sm mr-sm-2"
+          className="btn btn-outline-dark btn-sm mr-sm-2"
           id="edit"
           onClick={[Function]}
           type="button"
@@ -61,7 +61,7 @@ ShallowWrapper {
           Editar
 </button>,
         <button
-          className="btn btn-outline-info btn-sm mr-sm-2"
+          className="btn btn-outline-dark btn-sm mr-sm-2"
           id="delete"
           onClick={[Function]}
           type="button"
@@ -102,7 +102,7 @@ ShallowWrapper {
               2
 </span>,
           ],
-          "className": "btn btn-outline-info btn-sm mr-sm-2",
+          "className": "btn btn-outline-dark btn-sm mr-sm-2",
           "id": "show",
           "onClick": [Function],
           "type": "button",
@@ -132,7 +132,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Adicionar Comentário",
-          "className": "btn btn-outline-info btn-sm mr-sm-2",
+          "className": "btn btn-outline-dark btn-sm mr-sm-2",
           "id": "edit",
           "onClick": [Function],
           "type": "button",
@@ -147,7 +147,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Editar",
-          "className": "btn btn-outline-info btn-sm mr-sm-2",
+          "className": "btn btn-outline-dark btn-sm mr-sm-2",
           "id": "edit",
           "onClick": [Function],
           "type": "button",
@@ -162,7 +162,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Excluir",
-          "className": "btn btn-outline-info btn-sm mr-sm-2",
+          "className": "btn btn-outline-dark btn-sm mr-sm-2",
           "id": "delete",
           "onClick": [Function],
           "type": "button",
@@ -212,7 +212,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <button
-            className="btn btn-outline-info btn-sm mr-sm-2"
+            className="btn btn-outline-dark btn-sm mr-sm-2"
             id="show"
             onClick={[Function]}
             type="button"
@@ -226,7 +226,7 @@ ShallowWrapper {
             </span>
 </button>,
           <button
-            className="btn btn-outline-info btn-sm mr-sm-2"
+            className="btn btn-outline-dark btn-sm mr-sm-2"
             id="edit"
             onClick={[Function]}
             type="button"
@@ -234,7 +234,7 @@ ShallowWrapper {
             Adicionar Comentário
 </button>,
           <button
-            className="btn btn-outline-info btn-sm mr-sm-2"
+            className="btn btn-outline-dark btn-sm mr-sm-2"
             id="edit"
             onClick={[Function]}
             type="button"
@@ -242,7 +242,7 @@ ShallowWrapper {
             Editar
 </button>,
           <button
-            className="btn btn-outline-info btn-sm mr-sm-2"
+            className="btn btn-outline-dark btn-sm mr-sm-2"
             id="delete"
             onClick={[Function]}
             type="button"
@@ -283,7 +283,7 @@ ShallowWrapper {
                 2
 </span>,
             ],
-            "className": "btn btn-outline-info btn-sm mr-sm-2",
+            "className": "btn btn-outline-dark btn-sm mr-sm-2",
             "id": "show",
             "onClick": [Function],
             "type": "button",
@@ -313,7 +313,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Adicionar Comentário",
-            "className": "btn btn-outline-info btn-sm mr-sm-2",
+            "className": "btn btn-outline-dark btn-sm mr-sm-2",
             "id": "edit",
             "onClick": [Function],
             "type": "button",
@@ -328,7 +328,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Editar",
-            "className": "btn btn-outline-info btn-sm mr-sm-2",
+            "className": "btn btn-outline-dark btn-sm mr-sm-2",
             "id": "edit",
             "onClick": [Function],
             "type": "button",
@@ -343,7 +343,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Excluir",
-            "className": "btn btn-outline-info btn-sm mr-sm-2",
+            "className": "btn btn-outline-dark btn-sm mr-sm-2",
             "id": "delete",
             "onClick": [Function],
             "type": "button",

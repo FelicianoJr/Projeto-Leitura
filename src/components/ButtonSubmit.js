@@ -6,7 +6,7 @@ const ButtonSubmit = ({ pristine, submitting }) => {
       <button
         type="submit"
         disabled={pristine || submitting}
-        className="btn btn-primary"
+        className="btn btn-dark btn-sm"
       >
         Salvar
       </button>

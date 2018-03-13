@@ -14,9 +14,7 @@ export const deleteComment = comment => dispatch => {
       dispatch(removeComment(resp));
       dispatch(decreaseCountComment(resp.parentId));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const add = comment => ({
@@ -31,9 +29,7 @@ export const addComment = comment => dispatch => {
       dispatch(add(resp));
       dispatch(increaseCountComment(comment.parentId));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const receiveIdComment = comment => ({
@@ -47,9 +43,7 @@ export const getIdComment = comment => dispatch => {
     .then(resp => {
       dispatch(receiveIdComment(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const receiveCommentForPost = comment => ({
@@ -63,9 +57,7 @@ export const getCommentPost = comment => dispatch => {
     .then(resp => {
       dispatch(receiveCommentForPost(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const sendVoteComment = comment => ({
@@ -79,9 +71,7 @@ export const voteComment = comment => dispatch => {
     .then(resp => {
       dispatch(sendVoteComment(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };
 
 const editSingle = comment => ({
@@ -95,7 +85,5 @@ export const editComment = comment => dispatch => {
     .then(resp => {
       dispatch(editSingle(resp));
     })
-    .catch(resp => {
-      throw new Error(resp);
-    });
+    .catch(error => console.log(error));
 };

@@ -10,14 +10,14 @@ const GroupButtonCard = ({
   voteDown,
   data
 }) => {
-  const buttonsShow = data.commentCount == undefined;
+  const buttonsShow = data.commentCount === undefined;
   return (
     <div>
       {!buttonsShow && (
         <button
           id="show"
           type="button"
-          className="btn btn-outline-info btn-sm mr-sm-2"
+          className="btn btn-outline-dark btn-sm mr-sm-2"
           onClick={showComment}
         >
           Visualisar Comentários{" "}
@@ -29,7 +29,7 @@ const GroupButtonCard = ({
         <button
           id="edit"
           type="button"
-          className="btn btn-outline-info btn-sm mr-sm-2"
+          className="btn btn-outline-dark btn-sm mr-sm-2"
           onClick={newComment}
         >
           Adicionar Comentário
@@ -38,7 +38,7 @@ const GroupButtonCard = ({
       <button
         id="edit"
         type="button"
-        className="btn btn-outline-info btn-sm mr-sm-2"
+        className="btn btn-outline-dark btn-sm mr-sm-2"
         onClick={edit}
       >
         Editar
@@ -46,7 +46,7 @@ const GroupButtonCard = ({
       <button
         id="delete"
         type="button"
-        className="btn btn-outline-info btn-sm mr-sm-2"
+        className="btn btn-outline-dark btn-sm mr-sm-2"
         onClick={remove}
       >
         Excluir

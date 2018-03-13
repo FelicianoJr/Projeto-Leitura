@@ -16,6 +16,7 @@ import {
   getPost,
   getComment
 } from "../actions";
+import PageNotFounds from "../components/PageNotFound";
 
 const customStyles = {
   content: {
@@ -74,7 +75,7 @@ class PostContainer extends React.Component {
 
   render() {
     const { posts, comments } = this.props;
-
+  if (posts.length === 0) return (<PageNotFounds />);
     return (
       <div>
         {posts &&

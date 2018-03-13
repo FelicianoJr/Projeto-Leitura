@@ -14,7 +14,7 @@ export default {
 
   remove: id =>
     fetch(`${api}/comments/${id}`, { method: "DELETE", headers }).then(resp =>
-      resp.json()
+      resp.json().then(data => data)
     ),
 
   edit: body =>
@@ -22,11 +22,11 @@ export default {
       method: "PUT",
       headers: { ...headers, "Content-Type": "application/json" },
       body: JSON.stringify(body)
-    }).then(res => res.json()),
+    }).then(res => res.json().then(data => data)),
 
   getId: id =>
     fetch(`${api}/comments/${id}`, { method: "GET", headers }).then(res =>
-      res.json()
+      res.json().then(data => data)
     ),
 
   getPostIdComments: id =>
@@ -39,5 +39,5 @@ export default {
       method: "POST",
       headers: { ...headers, "Content-Type": "Application/json" },
       body: JSON.stringify(body)
-    }).then(res => res.json())
+    }).then(res => res.json().then(data => data))
 };

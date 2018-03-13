@@ -24,11 +24,12 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <a
-          className="navbar-brand"
-          href="/"
+          className="navbar-brand disabled"
+          href="#"
 >
           Projeto Udacity Leitura
 </a>,
+        undefined,
         <form
           className="form-inline "
 >
@@ -99,13 +100,14 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Projeto Udacity Leitura",
-          "className": "navbar-brand",
-          "href": "/",
+          "className": "navbar-brand disabled",
+          "href": "#",
         },
         "ref": null,
         "rendered": "Projeto Udacity Leitura",
         "type": "a",
       },
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -383,11 +385,12 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <a
-            className="navbar-brand"
-            href="/"
+            className="navbar-brand disabled"
+            href="#"
 >
             Projeto Udacity Leitura
 </a>,
+          undefined,
           <form
             className="form-inline "
 >
@@ -458,13 +461,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Projeto Udacity Leitura",
-            "className": "navbar-brand",
-            "href": "/",
+            "className": "navbar-brand disabled",
+            "href": "#",
           },
           "ref": null,
           "rendered": "Projeto Udacity Leitura",
           "type": "a",
         },
+        undefined,
         Object {
           "instance": null,
           "key": undefined,

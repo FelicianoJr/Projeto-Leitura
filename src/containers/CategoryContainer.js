@@ -6,7 +6,6 @@ import NavBarContainer from "./NavBarContainer";
 
 class CategoryContainer extends React.Component {
 
-
   nameCategory = () => this.props.match.params.category;
 
   componentDidMount() {
@@ -29,7 +28,7 @@ class CategoryContainer extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getPostAllCategory: patch => dispatch(getPostAllCategory(patch))
+    getPostAllCategory: data => dispatch(getPostAllCategory(data))
   };
 };
 

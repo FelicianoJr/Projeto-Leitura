@@ -12,7 +12,8 @@ let PostFormContainer = props => {
     toggle,
     pristine,
     submitting,
-    initialValues
+    initialValues,
+    categories
   } = props;
 
   const submit = values => {
@@ -28,7 +29,7 @@ let PostFormContainer = props => {
     <div>
       <form onSubmit={handleSubmit(submit)}>
         <div className="modal-body">
-          <FieldTitleCategory />
+          <FieldTitleCategory categories={categories} />
           <FieldBodyAuthor />
         </div>
         <div className="modal-footer">
@@ -54,7 +55,8 @@ const mapDispatchToProps = dispatch => {
 
 PostFormContainer = connect(
   state => ({
-    initialValues: state.editModal.post
+    initialValues: state.editModal.post,
+    categories: state.categories
   }),
   mapDispatchToProps
 )(PostFormContainer);

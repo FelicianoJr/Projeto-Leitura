@@ -1,7 +1,31 @@
 import comment from "./comment";
 import * as types from "../constants/ActionTypes";
-import { commentMock, commentsMock } from "../mocks/mock";
+ const commentMock = {
+  id: "894",
+  parentId: "8xf0y6ziyjabvozdd253nd",
+  timestamp: 1468166872634,
+  body: "Hi there! I am a COMMENT.",
+  author: "thingtwo"
+};
 
+ const commentsMock = [
+  {
+    id: "894",
+    parentId: "80",
+    timestamp: 1468166872634,
+    body: "Hi there! I am a COMMENT.",
+    author: "two",
+    voteScore: 6
+  },
+  {
+    id: "895",
+    parentId: "80",
+    timestamp: 1468166872634,
+    body: "Hi there! I am a COMMENT.",
+    author: "one",
+    voteScore: 1
+  }
+];
 describe("reducers comment", () => {
   it("should handle ADD_COMMENT", () => {
     expect(
