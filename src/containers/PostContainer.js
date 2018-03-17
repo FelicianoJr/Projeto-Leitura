@@ -1,22 +1,13 @@
-import { connect } from "react-redux";
 import React from "react";
-import CommentFormContainer from "./CommentFormContainer";
-import PostFormContainer from "./PostFormContainer";
-import CardDetail from "../components/CardDetail";
-import Modal from "react-modal";
+import { connect } from "react-redux";
 import { UUID } from "../util/UUID";
-import ButtonClose from "../components/ButtonClose";
-
-import {
-  getCommentPost,
-  deleteComment,
-  removePost,
-  voteComment,
-  votePost,
-  getPost,
-  getComment
-} from "../actions";
-import PageNotFounds from "../components/PageNotFound";
+import Modal from "react-modal";
+import { removePost, votePost, getPost, getComment } from "../actions";
+import GroupButtonFooter from "../components/GroupButtonFooter";
+import CardBodyDetail from "../components/CardBodyDetail";
+import FormPostContainer from "./FormPostContainer";
+import FormCommentContainer from "./FormCommentContainer";
+import { getMakeFilterPost } from "../selectors/index";
 
 const customStyles = {
   content: {
@@ -33,10 +24,22 @@ class PostContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
+      modalPost: false,
       modalComment: false
     };
   }
+
+  componentDidMount() {
+    Modal.setAppElement("#root");
+  }
+
+  setVoteDown = data => {
+    return { id: data.id, option: "downVote" };
+  };
+
+  setVoteUp = data => {
+    return { id: data.id, option: "upVote" };
+  };
 
   addComment = post => {
     return {
@@ -46,21 +49,9 @@ class PostContainer extends React.Component {
     };
   };
 
-  componentDidMount() {
-    Modal.setAppElement("#root");
-  }
-
-  getDownVote = data => {
-    return { id: data.id, option: "downVote" };
-  };
-
-  getUpVote = data => {
-    return { id: data.id, option: "upVote" };
-  };
-
   togglePost = () => {
     this.setState({
-      modal: !this.state.modal
+      modalPost: !this.state.modalPost
     });
   };
 
@@ -70,80 +61,63 @@ class PostContainer extends React.Component {
     });
   };
 
-  filterComments = post =>
-    this.props.comments.filter(comment => comment.parentId === post.id);
-
   render() {
-    const { posts, comments } = this.props;
-  if (posts.length === 0) return (<PageNotFounds />);
+    const { posts, removePost, votePost, getComment, getPost } = this.props;
+
     return (
       <div>
-        {posts &&
+        {posts.length > 0 &&
           posts.map(post => (
             <div key={post.id} className="card mb-2 mx-2 mt-2">
-              <CardDetail
+              <CardBodyDetail
                 data={post}
-                showComment={() => this.props.getCommentPost(post)}
-                newComment={() => {
-                  this.props.getComment(this.addComment(post));
-                  this.toggleComment();
-                }}
                 edit={() => {
-                  this.props.getPost(post);
+                  getPost(post);
                   this.togglePost();
                 }}
-                remove={() => this.props.removePost(post)}
-                voteDown={() => this.props.votePost(this.getDownVote(post))}
-                voteUp={() => this.props.votePost(this.getUpVote(post))}
+                remove={() => removePost(post)}
+                voteDown={() => votePost(this.setVoteDown(post))}
+                voteUp={() => votePost(this.setVoteUp(post))}
               />
-
-              {comments &&
-                this.filterComments(post).map(comment => (
-                  <div key={comment.id} className="card mb-2 mx-2">
-                    <CardDetail
-                      data={comment}
-                      edit={() => {
-                        this.props.getComment(comment);
-                        this.toggleComment();
-                      }}
-                      remove={() => this.props.deleteComment(comment)}
-                      voteDown={() =>
-                        this.props.voteComment(this.getDownVote(comment))
-                      }
-                      voteUp={() =>
-                        this.props.voteComment(this.getUpVote(comment))
-                      }
-                    />
-                  </div>
-                ))}
+              <GroupButtonFooter
+                post={post}
+                newComment={() => {
+                  getComment(this.addComment(post));
+                  this.toggleComment();
+                }}
+              />
             </div>
           ))}
 
         <Modal isOpen={this.state.modalComment} style={customStyles}>
-          <ButtonClose toggle={this.toggleComment} />
-          <CommentFormContainer toggle={this.toggleComment} />
+          <FormCommentContainer toggle={this.toggleComment} />
         </Modal>
 
-        <Modal isOpen={this.state.modal} style={customStyles}>
-          <ButtonClose toggle={this.togglePost} />
-          <PostFormContainer toggle={this.togglePost} />
+        <Modal isOpen={this.state.modalPost} style={customStyles}>
+          <FormPostContainer toggle={this.togglePost} />
         </Modal>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  posts: state.post,
-  comments: state.comment
-});
+const makeMapStateToProps = () => {
+  const getSort = getMakeFilterPost();
+  const mapStateToProps = (state, props) => {
+    return {
+      posts: getSort(state, props)
+    };
+  };
+  return mapStateToProps;
+};
 
-export default connect(mapStateToProps, {
-  getPost,
-  removePost,
-  votePost,
-  getCommentPost,
-  deleteComment,
-  voteComment,
-  getComment
-})(PostContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    getPost: data => dispatch(getPost(data)),
+    removePost: data => dispatch(removePost(data)),
+    votePost: data => dispatch(votePost(data)),
+    getComment: data => dispatch(getComment(data))
+  };
+};
+
+export default connect(makeMapStateToProps, mapDispatchToProps)(PostContainer);

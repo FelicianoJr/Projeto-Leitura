@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GroupButtonFooter/> should component Snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GroupButtonFooter
+    newComment={[Function]}
+    post={
+        Object {
+            "category": "react",
+            "commentCount": 2,
+            "id": "rer455",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card-footer  "
+>
+        <Link
+                className="btn btn-sm btn-light"
+                replace={false}
+                to="/react/rer455"
+        >
+                Visualisar Comentários
+                 
+                <span
+                        className="badge badge-info"
+                >
+                        2
+                </span>
+        </Link>
+        <button
+                className="btn btn-sm btn-light"
+                onClick={[Function]}
+        >
+                Adicionar Comentário
+        </button>
+</div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Link
+            className="btn btn-sm btn-light"
+            replace={false}
+            to="/react/rer455"
+>
+            Visualisar Comentários
+             
+            <span
+                        className="badge badge-info"
+            >
+                        2
+            </span>
+</Link>,
+          <button
+            className="btn btn-sm btn-light"
+            onClick={[Function]}
+>
+            Adicionar Comentário
+</button>,
+        ],
+        "className": "card-footer  ",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              "Visualisar Comentários",
+              " ",
+              <span
+                className="badge badge-info"
+>
+                2
+</span>,
+            ],
+            "className": "btn btn-sm btn-light",
+            "replace": false,
+            "to": "/react/rer455",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Visualisar Comentários",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 2,
+                "className": "badge badge-info",
+              },
+              "ref": null,
+              "rendered": 2,
+              "type": "span",
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Adicionar Comentário",
+            "className": "btn btn-sm btn-light",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Adicionar Comentário",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-footer  "
+>
+          <Link
+                    className="btn btn-sm btn-light"
+                    replace={false}
+                    to="/react/rer455"
+          >
+                    Visualisar Comentários
+                     
+                    <span
+                              className="badge badge-info"
+                    >
+                              2
+                    </span>
+          </Link>
+          <button
+                    className="btn btn-sm btn-light"
+                    onClick={[Function]}
+          >
+                    Adicionar Comentário
+          </button>
+</div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Link
+              className="btn btn-sm btn-light"
+              replace={false}
+              to="/react/rer455"
+>
+              Visualisar Comentários
+               
+              <span
+                            className="badge badge-info"
+              >
+                            2
+              </span>
+</Link>,
+            <button
+              className="btn btn-sm btn-light"
+              onClick={[Function]}
+>
+              Adicionar Comentário
+</button>,
+          ],
+          "className": "card-footer  ",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "Visualisar Comentários",
+                " ",
+                <span
+                  className="badge badge-info"
+>
+                  2
+</span>,
+              ],
+              "className": "btn btn-sm btn-light",
+              "replace": false,
+              "to": "/react/rer455",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Visualisar Comentários",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 2,
+                  "className": "badge badge-info",
+                },
+                "ref": null,
+                "rendered": 2,
+                "type": "span",
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Adicionar Comentário",
+              "className": "btn btn-sm btn-light",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Adicionar Comentário",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

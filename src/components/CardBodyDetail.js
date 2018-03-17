@@ -1,20 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import GroupButtonCard from "./GroupButtonCard";
 import { format } from "date-fns";
+import GroupButtonBody from "./GroupButtonBody";
 
-const CardDetail = props => {
-  const {
-    showComment,
-    newComment,
-    edit,
-    remove,
-    voteDown,
-    voteUp,
-    data
-  } = props;
+const CardBodyDetail = ({ data, edit, remove, voteDown, voteUp }) => {
   return (
-    <div className="card-body">
+    <div className="card-body  text-dark">
       {data.title && <div className="card-title">{data.title}</div>}
       <div className="card-text">{data.body}</div>
       <div className="card-text">
@@ -22,18 +13,13 @@ const CardDetail = props => {
           <b>Pontuação:</b>
         </small>{" "}
         <div className="badge">{data.voteScore}</div>
-        <br />
-        <small className="text-muted">
-          {" "}
-          
-          Criado por <b>{data.author}</b> em <b>{format(data.timestamp, "DD/MM/YYYY")}</b>
-        </small>
       </div>
+      <small className="text-muted ">
+        Criado por {data.author} em {format(data.timestamp, "DD/MM/YYYY")}
+      </small>
 
-      <GroupButtonCard
-        data={data}
-        showComment={showComment}
-        newComment={newComment}
+      <GroupButtonBody
+        count={data.commentCount}
         edit={edit}
         remove={remove}
         voteDown={voteDown}
@@ -43,7 +29,7 @@ const CardDetail = props => {
   );
 };
 
-CardDetail.propTypes = {
+CardBodyDetail.propTypes = {
   title: PropTypes.string,
   body: PropTypes.string,
   author: PropTypes.string,
@@ -51,4 +37,4 @@ CardDetail.propTypes = {
   voteScore: PropTypes.number
 };
 
-export default CardDetail;
+export default CardBodyDetail;

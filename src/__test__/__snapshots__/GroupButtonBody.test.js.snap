@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GroupButtonBody> should component Snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GroupButtonBody
+    edit={[Function]}
+    remove={[Function]}
+    voteDown={[Function]}
+    voteUp={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className="btn btn-light btn-sm mr-sm-2"
+          id="edit"
+          onClick={[Function]}
+          type="button"
+>
+          Editar
+</button>,
+        <button
+          className="btn btn-light btn-sm mr-sm-2"
+          id="delete"
+          onClick={[Function]}
+          type="button"
+>
+          Excluir
+</button>,
+        <button
+          className="btn btn-light btn-sm mr-sm-2"
+          id="like"
+          onClick={[Function]}
+          type="button"
+>
+          Gostei
+</button>,
+        <button
+          className="btn btn-light btn-sm"
+          id="dislike"
+          onClick={[Function]}
+          type="button"
+>
+          Não Gostei
+</button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Editar",
+          "className": "btn btn-light btn-sm mr-sm-2",
+          "id": "edit",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Editar",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Excluir",
+          "className": "btn btn-light btn-sm mr-sm-2",
+          "id": "delete",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Excluir",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Gostei",
+          "className": "btn btn-light btn-sm mr-sm-2",
+          "id": "like",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Gostei",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Não Gostei",
+          "className": "btn btn-light btn-sm",
+          "id": "dislike",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Não Gostei",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="btn btn-light btn-sm mr-sm-2"
+            id="edit"
+            onClick={[Function]}
+            type="button"
+>
+            Editar
+</button>,
+          <button
+            className="btn btn-light btn-sm mr-sm-2"
+            id="delete"
+            onClick={[Function]}
+            type="button"
+>
+            Excluir
+</button>,
+          <button
+            className="btn btn-light btn-sm mr-sm-2"
+            id="like"
+            onClick={[Function]}
+            type="button"
+>
+            Gostei
+</button>,
+          <button
+            className="btn btn-light btn-sm"
+            id="dislike"
+            onClick={[Function]}
+            type="button"
+>
+            Não Gostei
+</button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Editar",
+            "className": "btn btn-light btn-sm mr-sm-2",
+            "id": "edit",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Editar",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Excluir",
+            "className": "btn btn-light btn-sm mr-sm-2",
+            "id": "delete",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Excluir",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Gostei",
+            "className": "btn btn-light btn-sm mr-sm-2",
+            "id": "like",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Gostei",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Não Gostei",
+            "className": "btn btn-light btn-sm",
+            "id": "dislike",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Não Gostei",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

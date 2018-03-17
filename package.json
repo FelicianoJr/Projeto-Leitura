@@ -14,7 +14,8 @@
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,6 +30,9 @@
     "redux-mock-store": "^1.5.1"
   },
   "jest": {
-    "collectCoverageFrom": ["src/components/*.js","src/reducers/*.js"]
+    "collectCoverageFrom": [
+      "src/components/*.js",
+      "src/reducers/*.js"
+    ]
   }
 }

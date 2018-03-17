@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PageNotFounds/> should component Snapshot 1`] = `
+exports[`<GroupButtonModal/> should component Snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PageNotFounds />,
+  Symbol(enzyme.__unrendered__): <GroupButtonModal
+    pristine={undefined}
+    submitting={undefined}
+    toggle={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,19 +22,22 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1
-          className="display-4"
+        <button
+          className="btn btn-danger btn-sm"
+          onClick={[Function]}
+          type="button"
 >
-          Erro 404
-</h1>,
-        <p
-          className="lead"
+          Fechar
+</button>,
+        <button
+          className="btn btn-info btn-sm"
+          disabled={undefined}
+          type="submit"
 >
-          Página não encontrada!
-</p>,
-        " ",
+          Salvar
+</button>,
       ],
-      "className": "jumbotron mt-2 mx-2",
+      "className": "modal-footer",
     },
     "ref": null,
     "rendered": Array [
@@ -39,26 +46,29 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Erro 404",
-          "className": "display-4",
+          "children": "Fechar",
+          "className": "btn btn-danger btn-sm",
+          "onClick": [Function],
+          "type": "button",
         },
         "ref": null,
-        "rendered": "Erro 404",
-        "type": "h1",
+        "rendered": "Fechar",
+        "type": "button",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Página não encontrada!",
-          "className": "lead",
+          "children": "Salvar",
+          "className": "btn btn-info btn-sm",
+          "disabled": undefined,
+          "type": "submit",
         },
         "ref": null,
-        "rendered": "Página não encontrada!",
-        "type": "p",
+        "rendered": "Salvar",
+        "type": "button",
       },
-      " ",
     ],
     "type": "div",
   },
@@ -69,19 +79,22 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1
-            className="display-4"
+          <button
+            className="btn btn-danger btn-sm"
+            onClick={[Function]}
+            type="button"
 >
-            Erro 404
-</h1>,
-          <p
-            className="lead"
+            Fechar
+</button>,
+          <button
+            className="btn btn-info btn-sm"
+            disabled={undefined}
+            type="submit"
 >
-            Página não encontrada!
-</p>,
-          " ",
+            Salvar
+</button>,
         ],
-        "className": "jumbotron mt-2 mx-2",
+        "className": "modal-footer",
       },
       "ref": null,
       "rendered": Array [
@@ -90,26 +103,29 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Erro 404",
-            "className": "display-4",
+            "children": "Fechar",
+            "className": "btn btn-danger btn-sm",
+            "onClick": [Function],
+            "type": "button",
           },
           "ref": null,
-          "rendered": "Erro 404",
-          "type": "h1",
+          "rendered": "Fechar",
+          "type": "button",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Página não encontrada!",
-            "className": "lead",
+            "children": "Salvar",
+            "className": "btn btn-info btn-sm",
+            "disabled": undefined,
+            "type": "submit",
           },
           "ref": null,
-          "rendered": "Página não encontrada!",
-          "type": "p",
+          "rendered": "Salvar",
+          "type": "button",
         },
-        " ",
       ],
       "type": "div",
     },

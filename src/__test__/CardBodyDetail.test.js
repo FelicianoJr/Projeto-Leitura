@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import CardDetail from "../components/CardDetail";
-import GroupButtonCard from "../components/GroupButtonCard";
+import CardBodyDetail from "../components/CardBodyDetail";
+import GroupButtonBody from "../components/GroupButtonBody";
 
-const setup = (data, showPostButton) => {
-  const component = shallow(<CardDetail data={data} />);
+const setup = data => {
+  const component = shallow(<CardBodyDetail data={data} />);
 
   return {
     component: component,
@@ -12,34 +12,29 @@ const setup = (data, showPostButton) => {
     divBody: component.find(".card-text"),
     badgeScore: component.find(".badge"),
     b: component.find("b"),
-    groupButton: component.find(GroupButtonCard)
+    small: component.find("small"),
+    groupButton: component.find(GroupButtonBody)
   };
 };
 
-describe("<CardDetail/>", () => {
-  
-  const postProps = {
-    title: "Udacity",
-    body: "new situation",
-    voteScore: 4,
-    author: "Feliciano",
-    timestamp: 1467166872634
-  };
-
-  const commentProps = {
-    body: "new situation",
-    voteScore: 4,
-    author: "Feliciano",
-    timestamp: 1467166872634
-  };
+describe("<CardBodyDetail/>", () => {
+  let postProps;
+  beforeEach(() => {
+    postProps = {
+      title: "Udacity",
+      body: "new situation",
+      voteScore: 4,
+      author: "Feliciano",
+      timestamp: 1467166872634
+    };
+  });
 
   it("should render all Detail", () => {
-    const { divTitle, divBody, badgeScore, b } = setup(postProps);
+    const { divTitle, divBody, badgeScore, small } = setup(postProps);
     expect(divTitle.text()).toEqual("Udacity");
     expect(divBody.at(0).text()).toEqual("new situation");
     expect(badgeScore.text()).toEqual("4");
-    expect(b.at(1).text()).toEqual("Feliciano");
-    expect(b.at(2).text()).toEqual("28/06/2016");
+    expect(small.at(1).text()).toEqual("Criado por Feliciano em 28/06/2016");
   });
 
   it("renders a <GroupButtonCard/>", () => {

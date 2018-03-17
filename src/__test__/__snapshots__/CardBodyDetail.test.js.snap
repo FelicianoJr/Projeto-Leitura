@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardDetail/> snapchot  a cardDetail 1`] = `
+exports[`<CardBodyDetail/> snapchot  a cardDetail 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CardDetail
+  Symbol(enzyme.__unrendered__): <CardBodyDetail
     data={
         Object {
             "author": "Feliciano",
@@ -52,40 +52,24 @@ ShallowWrapper {
           >
                     4
           </div>
-          <br />
-          <small
-                    className="text-muted"
-          >
-                     
-                    Criado por 
-                    <b>
-                              Feliciano
-                    </b>
-                     em 
-                    <b>
-                              28/06/2016
-                    </b>
-          </small>
 </div>,
-        <GroupButtonCard
-          data={
-                    Object {
-                              "author": "Feliciano",
-                              "body": "new situation",
-                              "timestamp": 1467166872634,
-                              "title": "Udacity",
-                              "voteScore": 4,
-                            }
-          }
+        <small
+          className="text-muted "
+>
+          Criado por 
+          Feliciano
+           em 
+          28/06/2016
+</small>,
+        <GroupButtonBody
+          count={undefined}
           edit={undefined}
-          newComment={undefined}
           remove={undefined}
-          showComment={undefined}
           voteDown={undefined}
           voteUp={undefined}
 />,
       ],
-      "className": "card-body",
+      "className": "card-body  text-dark",
     },
     "ref": null,
     "rendered": Array [
@@ -130,20 +114,6 @@ ShallowWrapper {
 >
               4
 </div>,
-            <br />,
-            <small
-              className="text-muted"
->
-               
-              Criado por 
-              <b>
-                            Feliciano
-              </b>
-               em 
-              <b>
-                            28/06/2016
-              </b>
-</small>,
           ],
           "className": "card-text",
         },
@@ -185,82 +155,39 @@ ShallowWrapper {
             "rendered": 4,
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": "br",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                " ",
-                "Criado por ",
-                <b>
-                  Feliciano
-</b>,
-                " em ",
-                <b>
-                  28/06/2016
-</b>,
-              ],
-              "className": "text-muted",
-            },
-            "ref": null,
-            "rendered": Array [
-              " ",
-              "Criado por ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Feliciano",
-                },
-                "ref": null,
-                "rendered": "Feliciano",
-                "type": "b",
-              },
-              " em ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "28/06/2016",
-                },
-                "ref": null,
-                "rendered": "28/06/2016",
-                "type": "b",
-              },
-            ],
-            "type": "small",
-          },
         ],
         "type": "div",
       },
       Object {
         "instance": null,
         "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Criado por ",
+            "Feliciano",
+            " em ",
+            "28/06/2016",
+          ],
+          "className": "text-muted ",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Criado por ",
+          "Feliciano",
+          " em ",
+          "28/06/2016",
+        ],
+        "type": "small",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "data": Object {
-            "author": "Feliciano",
-            "body": "new situation",
-            "timestamp": 1467166872634,
-            "title": "Udacity",
-            "voteScore": 4,
-          },
+          "count": undefined,
           "edit": undefined,
-          "newComment": undefined,
           "remove": undefined,
-          "showComment": undefined,
           "voteDown": undefined,
           "voteUp": undefined,
         },
@@ -302,40 +229,24 @@ ShallowWrapper {
             >
                         4
             </div>
-            <br />
-            <small
-                        className="text-muted"
-            >
-                         
-                        Criado por 
-                        <b>
-                                    Feliciano
-                        </b>
-                         em 
-                        <b>
-                                    28/06/2016
-                        </b>
-            </small>
 </div>,
-          <GroupButtonCard
-            data={
-                        Object {
-                                    "author": "Feliciano",
-                                    "body": "new situation",
-                                    "timestamp": 1467166872634,
-                                    "title": "Udacity",
-                                    "voteScore": 4,
-                                  }
-            }
+          <small
+            className="text-muted "
+>
+            Criado por 
+            Feliciano
+             em 
+            28/06/2016
+</small>,
+          <GroupButtonBody
+            count={undefined}
             edit={undefined}
-            newComment={undefined}
             remove={undefined}
-            showComment={undefined}
             voteDown={undefined}
             voteUp={undefined}
 />,
         ],
-        "className": "card-body",
+        "className": "card-body  text-dark",
       },
       "ref": null,
       "rendered": Array [
@@ -380,20 +291,6 @@ ShallowWrapper {
 >
                 4
 </div>,
-              <br />,
-              <small
-                className="text-muted"
->
-                 
-                Criado por 
-                <b>
-                                Feliciano
-                </b>
-                 em 
-                <b>
-                                28/06/2016
-                </b>
-</small>,
             ],
             "className": "card-text",
           },
@@ -435,82 +332,39 @@ ShallowWrapper {
               "rendered": 4,
               "type": "div",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": "br",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  " ",
-                  "Criado por ",
-                  <b>
-                    Feliciano
-</b>,
-                  " em ",
-                  <b>
-                    28/06/2016
-</b>,
-                ],
-                "className": "text-muted",
-              },
-              "ref": null,
-              "rendered": Array [
-                " ",
-                "Criado por ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Feliciano",
-                  },
-                  "ref": null,
-                  "rendered": "Feliciano",
-                  "type": "b",
-                },
-                " em ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "28/06/2016",
-                  },
-                  "ref": null,
-                  "rendered": "28/06/2016",
-                  "type": "b",
-                },
-              ],
-              "type": "small",
-            },
           ],
           "type": "div",
         },
         Object {
           "instance": null,
           "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Criado por ",
+              "Feliciano",
+              " em ",
+              "28/06/2016",
+            ],
+            "className": "text-muted ",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Criado por ",
+            "Feliciano",
+            " em ",
+            "28/06/2016",
+          ],
+          "type": "small",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "data": Object {
-              "author": "Feliciano",
-              "body": "new situation",
-              "timestamp": 1467166872634,
-              "title": "Udacity",
-              "voteScore": 4,
-            },
+            "count": undefined,
             "edit": undefined,
-            "newComment": undefined,
             "remove": undefined,
-            "showComment": undefined,
             "voteDown": undefined,
             "voteUp": undefined,
           },

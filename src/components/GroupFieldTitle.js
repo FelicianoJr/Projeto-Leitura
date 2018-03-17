@@ -1,7 +1,7 @@
 import React from "react";
 import { Field } from "redux-form";
 
-const FieldTitleCategory = ({ categories = [] }) => {
+const GroupFieldTitle = ({ categories = [] }) => {
   return (
     <div>
       <div className="form-group">
@@ -35,4 +35,4 @@ const FieldTitleCategory = ({ categories = [] }) => {
   );
 };
 
-export default FieldTitleCategory;
+export default GroupFieldTitle;

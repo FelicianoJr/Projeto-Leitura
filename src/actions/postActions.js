@@ -1,13 +1,36 @@
 import postAPI from "../api/postAPI";
 import * as types from "../constants/ActionTypes";
+import { getCommentPost } from ".";
+import { parentDeleteComment } from "./commentActions";
 
-const sort = atributes => ({
+const sort = post => ({
   type: types.SORT_POST,
-  atributes
+  post: { value: post }
 });
 
-export const sortPost = atributes => dispatch => {
-  dispatch(sort(atributes));
+export const sortPost = post => dispatch => {
+  dispatch(sort(post));
+};
+
+const deletePost = post => ({
+  type: types.DELETE_POST,
+  post
+});
+
+const deletedFilterPost = post => ({
+  type: types.filters.DELETED_POST,
+  post: { deleted: post.deleted, value: "DELETEDI" }
+});
+
+export const removePost = post => dispatch => {
+  postAPI
+    .remove(post.id)
+    .then(resp => {
+      dispatch(deletePost(resp));
+      dispatch(deletedFilterPost(resp));
+      dispatch(parentDeleteComment(resp));
+    })
+    .catch(error => console.log(error));
 };
 
 const decrease = id => ({
@@ -26,6 +49,20 @@ const increase = id => ({
 
 export const increaseCountComment = id => dispatch => {
   dispatch(increase(id));
+};
+
+const receivePostId = post => ({
+  type: types.GET_POST_ID,
+  post
+});
+
+export const getPostId = post => dispatch => {
+  postAPI
+    .getId(post.id)
+    .then(resp => {
+      dispatch(receivePostId(resp));
+    })
+    .catch(error => console.log(error));
 };
 
 const add = post => ({
@@ -70,20 +107,6 @@ export const getPostAllCategory = post => dispatch => {
     .catch(error => console.log(error));
 };
 
-const deletePost = post => ({
-  type: types.DELETE_POST,
-  post
-});
-
-export const removePost = post => dispatch => {
-  postAPI
-    .remove(post.id)
-    .then(resp => {
-      dispatch(deletePost(resp));
-    })
-    .catch(error => console.log(error));
-};
-
 const receiveAllPost = post => ({
   type: types.GET_ALL_POST,
   post
@@ -108,20 +131,6 @@ export const editPost = post => dispatch => {
     .edit(post)
     .then(resp => {
       dispatch(editSinglePost(resp));
-    })
-    .catch(error => console.log(error));
-};
-
-const receiveIdPost = post => ({
-  type: types.GET_POST_ID,
-  post
-});
-
-export const getPostId = post => dispatch => {
-  postAPI
-    .getId(post.id)
-    .then(resp => {
-      dispatch(receiveIdPost(resp));
     })
     .catch(error => console.log(error));
 };

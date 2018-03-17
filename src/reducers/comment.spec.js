@@ -1,49 +1,35 @@
 import comment from "./comment";
 import * as types from "../constants/ActionTypes";
- const commentMock = {
-  id: "894",
-  parentId: "8xf0y6ziyjabvozdd253nd",
-  timestamp: 1468166872634,
-  body: "Hi there! I am a COMMENT.",
-  author: "thingtwo"
-};
 
- const commentsMock = [
-  {
-    id: "894",
-    parentId: "80",
-    timestamp: 1468166872634,
-    body: "Hi there! I am a COMMENT.",
-    author: "two",
-    voteScore: 6
-  },
-  {
-    id: "895",
-    parentId: "80",
-    timestamp: 1468166872634,
-    body: "Hi there! I am a COMMENT.",
-    author: "one",
-    voteScore: 1
-  }
-];
 describe("reducers comment", () => {
-  it("should handle ADD_COMMENT", () => {
-    expect(
-      comment([], {
-        type: types.ADD_COMMENT,
-        comment: commentMock
-      })
-    ).toEqual([
+  let commentsMock, commentMock;
+  beforeEach(() => {
+    commentMock = {
+      id: "894",
+      parentId: "8xf0y6ziyjabvozdd253nd",
+      timestamp: 1468166872634,
+      body: "Hi there! I am a COMMENT.",
+      author: "thingtwo"
+    };
+    commentsMock = [
       {
         id: "894",
-        parentId: "8xf0y6ziyjabvozdd253nd",
+        parentId: "80",
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
-        author: "thingtwo"
+        author: "two",
+        voteScore: 6
+      },
+      {
+        id: "895",
+        parentId: "80",
+        timestamp: 1468166872634,
+        body: "Hi there! I am a COMMENT.",
+        author: "one",
+        voteScore: 1
       }
-    ]);
+    ];
   });
-
   it("should handle DELETE_COMMENT", () => {
     expect(
       comment(commentsMock, {

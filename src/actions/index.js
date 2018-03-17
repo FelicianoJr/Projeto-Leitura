@@ -7,14 +7,18 @@ export {
   getPostId,
   removePost,
   sortPost,
-  votePost
+  votePost,
+  filterSort
 } from "./postActions";
 export {
   addComment,
-  deleteComment,
+  removeComment,
   editComment,
   getCommentPost,
   getIdComment,
   voteComment
 } from "./commentActions";
-export { getComment, getParentId,getPost } from "./editModalActions"
+export { getComment, getParentId, getPost } from "./editModalActions";
+
+
+

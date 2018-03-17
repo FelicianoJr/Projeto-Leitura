@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import App from "../containers/App";
 import CategoryContainer from "../containers/CategoryContainer";
 import { Provider } from "react-redux";
-import PageNotFounds from "../components/PageNotFound";
+import PostDetailContainer from "../containers/PostDetailContainer";
 
 const Root = ({ store }) => {
   return (
@@ -11,8 +11,8 @@ const Root = ({ store }) => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={App} />
-          <Route path="/category/:category?" component={CategoryContainer} />
-          <Route path="*" component={PageNotFounds} />
+          <Route exact path="/:category" component={CategoryContainer} />
+          <Route exact path="/:category/:id" component={PostDetailContainer} />
         </Switch>
       </BrowserRouter>
     </Provider>

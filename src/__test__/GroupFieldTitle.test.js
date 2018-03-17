@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import FieldTitleCategory from "../components/FieldTitleCategory";
+import GroupFieldTitle from "../components/GroupFieldTitle";
 
 const setup = (categories = []) => {
-  const component = shallow(<FieldTitleCategory categories={categories} />);
+  const component = shallow(<GroupFieldTitle categories={categories} />);
 
   return {
     component: component,
@@ -13,7 +13,21 @@ const setup = (categories = []) => {
   };
 };
 
-describe("<FieldTitleCategory/>", () => {
+describe("<GroupFieldTitle/>", () => {
+  let categories;
+  beforeEach(() => {
+    categories = [
+      {
+        name: "react",
+        path: "react"
+      },
+      {
+        name: "redux",
+        path: "redux"
+      }
+    ];
+  });
+
   it("should rende  two <FormGroup>", () => {
     const { formGroup } = setup();
     expect(formGroup.length).toEqual(2);
@@ -31,16 +45,7 @@ describe("<FieldTitleCategory/>", () => {
   });
 
   it("should rende 2 length input ", () => {
-    const { input } = setup([
-      {
-        name: "react",
-        path: "react"
-      },
-      {
-        name: "redux",
-        path: "redux"
-      }
-    ]);
+    const { input } = setup(categories);
     expect(input.find("option").length).toEqual(3);
   });
 

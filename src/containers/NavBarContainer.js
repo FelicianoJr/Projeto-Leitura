@@ -1,12 +1,10 @@
 import React from "react";
-import { sortPost } from "../actions";
-import { connect } from "react-redux";
-import NavBarMain from "../components/NavBarMain";
 import Modal from "react-modal";
-import PostFormContainer from "./PostFormContainer";
-import ButtonClose from "../components/ButtonClose";
-import { getPost } from "../actions";
+import { connect } from "react-redux";
 import { UUID } from "../util/UUID";
+import { getPost, sortPost } from "../actions";
+import NavBar from "../components/NavBar";
+import FormPostContainer from "./FormPostContainer";
 
 const customStyles = {
   content: {
@@ -45,23 +43,21 @@ class NavBarContainer extends React.PureComponent {
   };
 
   render() {
-    const { categories, sortPost, pushRoute, category } = this.props;
+    const { categories, getPost, disabled, sortPost, filter } = this.props;
     return (
       <div>
-        <NavBarMain
+        <NavBar
           categories={categories}
           newPost={() => {
-            this.props.getPost(this.newPost());
+            getPost(this.newPost());
             this.toggle();
           }}
-          pushRoute={pushRoute}
           sortPost={sortPost}
-          category={category}
+          disabled={disabled}
+          filter={filter}
         />
-
         <Modal isOpen={this.state.modal} style={customStyles}>
-          <ButtonClose toggle={this.toggle} />
-          <PostFormContainer toggle={this.toggle} />
+          <FormPostContainer toggle={this.toggle} />
         </Modal>
       </div>
     );
@@ -69,12 +65,13 @@ class NavBarContainer extends React.PureComponent {
 }
 
 const mapStateToProps = state => ({
-  categories: state.categories
+  categories: state.categories,
+  filterPost: state.filterPost.value
 });
 
 const mapDispatchToProps = dispatch => {
   return {
-    sortPost: event => dispatch(sortPost(event.target.value)),
+    sortPost: e => dispatch(sortPost(e.target.value)),
     getPost: post => dispatch(getPost(post))
   };
 };

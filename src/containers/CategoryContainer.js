@@ -1,23 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
-import PostContainer from "./PostContainer";
 import { getPostAllCategory } from "../actions";
+import PostContainer from "./PostContainer";
 import NavBarContainer from "./NavBarContainer";
 
 class CategoryContainer extends React.Component {
 
-  nameCategory = () => this.props.match.params.category;
-
   componentDidMount() {
-    if (this.nameCategory()) {
-      this.props.getPostAllCategory(this.nameCategory());
-    }
+    this.props.getPostAllCategory(this.props.match.params.category);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.props.getPostAllCategory(nextProps.match.params.category);
   }
 
   render() {
     return (
       <div>
-        <NavBarContainer category={this.nameCategory()} />
+        <NavBarContainer />
         <div className="container">
           <PostContainer />
         </div>

@@ -1,18 +1,26 @@
+import React from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
-import React from "react";
 import { editComment, addComment } from "../actions";
-import FieldBodyAuthor from "../components/FieldBodyAuthor";
-import ButtonSubmit from "../components/ButtonSubmit";
+import GroupFieldBody from "../components/GroupFieldBody";
+import GroupButtonModal from "../components/GroupButtonModal";
 
-let CommentFormContainer = props => {
-  const { handleSubmit, toggle, pristine, submitting, initialValues } = props;
+let FormCommentContainer = props => {
+  const {
+    handleSubmit,
+    toggle,
+    pristine,
+    submitting,
+    initialValues,
+    editComment,
+    addComment
+  } = props;
 
   const submit = values => {
     if (initialValues.body) {
-      props.editComment(values);
+      editComment(values);
     } else {
-      props.addComment(values);
+      addComment(values);
     }
     toggle();
   };
@@ -21,21 +29,23 @@ let CommentFormContainer = props => {
     <div>
       <form onSubmit={handleSubmit(submit)}>
         <div className="modal-body">
-          <FieldBodyAuthor />
+          <GroupFieldBody />
         </div>
-        <div className="modal-footer">
-          <ButtonSubmit pristine={pristine} submitting={submitting} />
-        </div>
+        <GroupButtonModal
+          toggle={toggle}
+          pristine={pristine}
+          submitting={submitting}
+        />
       </form>
     </div>
   );
 };
 
-CommentFormContainer = reduxForm({
+FormCommentContainer = reduxForm({
   form: "comment",
   initialValues: {},
   enableReinitialize: true
-})(CommentFormContainer);
+})(FormCommentContainer);
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -44,11 +54,11 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-CommentFormContainer = connect(
+FormCommentContainer = connect(
   state => ({
     initialValues: state.editModal.comment
   }),
   mapDispatchToProps
-)(CommentFormContainer);
+)(FormCommentContainer);
 
-export default CommentFormContainer;
+export default FormCommentContainer;

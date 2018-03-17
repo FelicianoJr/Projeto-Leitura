@@ -1,26 +1,28 @@
 import React from "react";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
-import FieldBodyAuthor from "../components/FieldBodyAuthor";
-import FieldTitleCategory from "../components/FieldTitleCategory";
-import ButtonSubmit from "../components/ButtonSubmit";
 import { editPost, addPost } from "../actions";
+import GroupButtonModal from "../components/GroupButtonModal";
+import GroupFieldBody from "../components/GroupFieldBody";
+import GroupFieldTitle from "../components/GroupFieldTitle";
 
-let PostFormContainer = props => {
+let FormPostContainer = props => {
   const {
     handleSubmit,
     toggle,
     pristine,
     submitting,
     initialValues,
-    categories
+    categories,
+    editPost,
+    addPost
   } = props;
 
   const submit = values => {
     if (initialValues.body) {
-      props.editPost(values);
+      editPost(values);
     } else {
-      props.addPost(values);
+      addPost(values);
     }
     toggle();
   };
@@ -29,22 +31,24 @@ let PostFormContainer = props => {
     <div>
       <form onSubmit={handleSubmit(submit)}>
         <div className="modal-body">
-          <FieldTitleCategory categories={categories} />
-          <FieldBodyAuthor />
+          <GroupFieldTitle categories={categories} />
+          <GroupFieldBody />
         </div>
-        <div className="modal-footer">
-          <ButtonSubmit pristine={pristine} submitting={submitting} />
-        </div>
+        <GroupButtonModal
+          toggle={toggle}
+          pristine={pristine}
+          submitting={submitting}
+        />
       </form>
     </div>
   );
 };
 
-PostFormContainer = reduxForm({
+FormPostContainer = reduxForm({
   form: "post",
   initialValues: {},
   enableReinitialize: true
-})(PostFormContainer);
+})(FormPostContainer);
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -53,12 +57,12 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-PostFormContainer = connect(
+FormPostContainer = connect(
   state => ({
     initialValues: state.editModal.post,
     categories: state.categories
   }),
   mapDispatchToProps
-)(PostFormContainer);
+)(FormPostContainer);
 
-export default PostFormContainer;
+export default FormPostContainer;

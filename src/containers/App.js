@@ -11,15 +11,10 @@ class App extends React.Component {
     this.props.categoryAll();
   }
 
-  pushRoute = e => {
-    this.props.history.push(`/category/${e.target.value}`);
-    e.preventDefault();
-  };
-
   render() {
     return (
       <div>
-        <NavBarContainer pushRoute={this.pushRoute} />
+        <NavBarContainer />
         <div className="container">
           <PostContainer />
         </div>
@@ -28,11 +23,15 @@ class App extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  categories: state.categories
+});
+
 const mapDispatchToProps = dispatch => {
   return {
     getAllPost: () => dispatch(getAllPost()),
-    categoryAll: () => dispatch(getCategoryAll())
+    categoryAll: () => dispatch(getCategoryAll()),
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

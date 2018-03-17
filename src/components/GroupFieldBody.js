@@ -1,7 +1,7 @@
 import React from "react";
 import { Field } from "redux-form";
 
-const FieldBodyAuthor = () => {
+const GroupFieldBody = () => {
   return (
     <div>
       <div className="form-group">
@@ -28,4 +28,4 @@ const FieldBodyAuthor = () => {
   );
 };
 
-export default FieldBodyAuthor;
+export default GroupFieldBody;

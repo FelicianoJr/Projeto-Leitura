@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import FieldBodyAuthor from "../components/FieldBodyAuthor";
+import GroupFieldBody from "../components/GroupFieldBody";
 
 const setup = () => {
-  const component = shallow(<FieldBodyAuthor />);
+  const component = shallow(<GroupFieldBody />);
 
   return {
     component: component,
@@ -13,7 +13,7 @@ const setup = () => {
   };
 };
 
-describe("<FieldBodyAuthor/>", () => {
+describe("<GroupFieldBody/>", () => {
   it("should rende  <Form>", () => {
     const { formGroup } = setup();
     expect(formGroup.length).toEqual(2);
