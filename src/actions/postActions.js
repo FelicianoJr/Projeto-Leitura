@@ -11,16 +11,6 @@ export const sortPost = post => dispatch => {
   dispatch(sort(post));
 };
 
-const deletePost = post => ({
-  type: types.DELETE_POST,
-  post
-});
-
-const deletedFilterPost = post => ({
-  type: types.filters.DELETED_POST,
-  post: { deleted: post.deleted, value: "DELETED" }
-});
-
 export const removePost = post => dispatch => {
   postAPI
     .remove(post.id)
@@ -32,9 +22,14 @@ export const removePost = post => dispatch => {
     .catch(error => console.log(error));
 };
 
-const receivePostId = post => ({
-  type: types.GET_POST_ID,
+const deletePost = post => ({
+  type: types.DELETE_POST,
   post
+});
+
+const deletedFilterPost = post => ({
+  type: types.filters.DELETED_POST,
+  post: { deleted: post.deleted, value: "DELETED" }
 });
 
 export const getPostId = post => dispatch => {
@@ -49,8 +44,8 @@ export const getPostId = post => dispatch => {
     .catch(error => console.log(error));
 };
 
-const add = post => ({
-  type: types.ADD_POST,
+const receivePostId = post => ({
+  type: types.GET_POST_ID,
   post
 });
 
@@ -63,8 +58,8 @@ export const addPost = post => dispatch => {
     .catch(error => console.log(error));
 };
 
-const vote = post => ({
-  type: types.VOTE_POST,
+const add = post => ({
+  type: types.ADD_POST,
   post
 });
 
@@ -77,8 +72,8 @@ export const votePost = post => dispatch => {
     .catch(error => console.log(error));
 };
 
-const receivePostCategory = post => ({
-  type: types.GET_ALL_POST_CATEGORY,
+const vote = post => ({
+  type: types.VOTE_POST,
   post
 });
 
@@ -91,8 +86,8 @@ export const getPostAllCategory = post => dispatch => {
     .catch(error => console.log(error));
 };
 
-const receiveAllPost = post => ({
-  type: types.GET_ALL_POST,
+const receivePostCategory = post => ({
+  type: types.GET_ALL_POST_CATEGORY,
   post
 });
 
@@ -105,8 +100,8 @@ export const getAllPost = () => dispatch => {
     .catch(error => console.log(error));
 };
 
-const editSinglePost = post => ({
-  type: types.EDIT_POST,
+const receiveAllPost = post => ({
+  type: types.GET_ALL_POST,
   post
 });
 
@@ -114,7 +109,12 @@ export const editPost = post => dispatch => {
   postAPI
     .edit(post)
     .then(resp => {
-      dispatch(editSinglePost(resp));
+      dispatch(edit(resp));
     })
     .catch(error => console.log(error));
 };
+
+const edit = post => ({
+  type: types.EDIT_POST,
+  post
+});

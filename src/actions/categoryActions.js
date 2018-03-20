@@ -1,11 +1,6 @@
 import categoryAPI from "../api/categoryAPI";
 import * as types from "../constants/ActionTypes";
 
-const receiveCategory = categories => ({
-  type: types.ALL_CATEGORY,
-  categories
-});
-
 export const getCategoryAll = () => dispatch => {
   categoryAPI
     .getAll()
@@ -14,3 +9,8 @@ export const getCategoryAll = () => dispatch => {
     })
     .catch(error => console.log(error));
 };
+
+const receiveCategory = categories => ({
+  type: types.ALL_CATEGORY,
+  categories
+});
