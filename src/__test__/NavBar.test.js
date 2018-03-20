@@ -3,14 +3,19 @@ import { shallow } from "enzyme";
 import Navbar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 
-const setup = (categories = [], disabled) => {
+const setup = (categories = [], disabled, filter) => {
   const actions = {
     newPost: jest.fn(),
     sortPost: jest.fn()
   };
 
   const component = shallow(
-    <Navbar {...actions} categories={categories} disabled={disabled} />
+    <Navbar
+      {...actions}
+      categories={categories}
+      disabled={disabled}
+      filter={filter}
+    />
   );
 
   return {
@@ -47,7 +52,17 @@ describe("<NavBar/>", () => {
     expect(option.at(3).text()).toEqual("Postagens Antigas");
   });
 
-  it("should call in select sortPost", () => {
+  it("should render  value filter select", () => {
+    const { select } = setup(categories,false,"Maior Pontuação");
+    expect(select.props().value).toEqual("Maior Pontuação");
+  });
+
+  it("should render  disabled select", () => {
+    const { select } = setup(categories,true,"Maior Pontuação");
+    expect(select.props().disabled).toEqual(true);
+  });
+
+  it("should call select sortPost", () => {
     const { actions, select } = setup();
     select.simulate("change", { target: { value: "100" } });
     expect(actions.sortPost).toBeCalled();

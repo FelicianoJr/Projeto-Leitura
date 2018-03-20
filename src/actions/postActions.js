@@ -1,10 +1,9 @@
 import postAPI from "../api/postAPI";
 import * as types from "../constants/ActionTypes";
-import { getCommentPost } from ".";
-import { parentDeleteComment } from "./commentActions";
+import { parentDeleteComment, getCommentPost } from "./commentActions";
 
 const sort = post => ({
-  type: types.SORT_POST,
+  type: types.filters.SORT_POST,
   post: { value: post }
 });
 
@@ -19,7 +18,7 @@ const deletePost = post => ({
 
 const deletedFilterPost = post => ({
   type: types.filters.DELETED_POST,
-  post: { deleted: post.deleted, value: "DELETEDI" }
+  post: { deleted: post.deleted, value: "DELETED" }
 });
 
 export const removePost = post => dispatch => {
@@ -33,24 +32,6 @@ export const removePost = post => dispatch => {
     .catch(error => console.log(error));
 };
 
-const decrease = id => ({
-  type: types.DECREASE_COUNT,
-  id
-});
-
-export const decreaseCountComment = id => dispatch => {
-  dispatch(decrease(id));
-};
-
-const increase = id => ({
-  type: types.INCREASE_COUNT,
-  id
-});
-
-export const increaseCountComment = id => dispatch => {
-  dispatch(increase(id));
-};
-
 const receivePostId = post => ({
   type: types.GET_POST_ID,
   post
@@ -60,7 +41,10 @@ export const getPostId = post => dispatch => {
   postAPI
     .getId(post.id)
     .then(resp => {
-      dispatch(receivePostId(resp));
+      if (!resp.error && Object.keys(resp).length !== 0) {
+        dispatch(receivePostId([resp]));
+        dispatch(getCommentPost({id:post.id}));
+      }
     })
     .catch(error => console.log(error));
 };

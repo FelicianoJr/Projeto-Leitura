@@ -38,7 +38,7 @@ export default {
 
   getId: id =>
     fetch(`${api}/posts/${id}`, { method: "GET", headers }).then(res =>
-      res.json().then(data => [data])
+      res.json().then(data => data)
     ),
 
   vote: body =>

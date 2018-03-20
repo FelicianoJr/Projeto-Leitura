@@ -5,7 +5,7 @@ import CategoryContainer from "../containers/CategoryContainer";
 import { Provider } from "react-redux";
 import PostDetailContainer from "../containers/PostDetailContainer";
 
-const Root = ({ store }) => {
+const route = ({ store }) => {
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -19,4 +19,4 @@ const Root = ({ store }) => {
   );
 };
 
-export default Root;
+export default route;

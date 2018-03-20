@@ -29,4 +29,13 @@ describe("reducer edit modal", () => {
       }
     });
   });
+
+  it("should rende EQUAL ZERO", () => {
+    expect(
+      editModal([], {
+        type: "",
+        comment: { id: "895", timestamp: 1468166872634 }
+      })
+    ).toEqual([]);
+  });
 });

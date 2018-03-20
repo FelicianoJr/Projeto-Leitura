@@ -122,9 +122,20 @@ describe("reducers post", () => {
     expect(
       post(postsMock, {
         type: types.DELETE_POST,
-        post: { id: "8xf0" }
+        post: { id: "8xf0", deleted: true }
       })
     ).toEqual([
+      {
+        id: "8xf0",
+        timestamp: 1467166872634,
+        title: "Udacity",
+        body: "Everyone.",
+        author: "thingtwo",
+        category: "react",
+        voteScore: 6,
+        deleted: true,
+        commentCount: 2
+      },
       {
         id: "6ni6",
         timestamp: 1468479767190,
@@ -267,135 +278,6 @@ describe("reducers post", () => {
         voteScore: -5,
         deleted: false,
         commentCount: 0
-      }
-    ]);
-  });
-
-
-  it("should handle SORT_POST / SCORE_SMALLER", () => {
-    expect(
-      post(postsMock, {
-        type: types.SORT_POST,
-        atributes: "SCORE_SMALLER"
-      })
-    ).toEqual([
-      {
-        id: "6ni6",
-        timestamp: 1468479767190,
-        title: "Learn",
-        body: "Just kidding.",
-        author: "thingone",
-        category: "redux",
-        voteScore: -5,
-        deleted: false,
-        commentCount: 0
-      },
-      {
-        id: "8xf0",
-        timestamp: 1467166872634,
-        title: "Udacity",
-        body: "Everyone.",
-        author: "thingtwo",
-        category: "react",
-        voteScore: 6,
-        deleted: false,
-        commentCount: 2
-      }
-    ]);
-  });
-
-  it("should handle SORT_POST / SCORE_BIGGER", () => {
-    expect(
-      post(postsMock, {
-        type: types.SORT_POST,
-        atributes: "SCORE_BIGGER"
-      })
-    ).toEqual([
-      {
-        id: "8xf0",
-        timestamp: 1467166872634,
-        title: "Udacity",
-        body: "Everyone.",
-        author: "thingtwo",
-        category: "react",
-        voteScore: 6,
-        deleted: false,
-        commentCount: 2
-      },
-      {
-        id: "6ni6",
-        timestamp: 1468479767190,
-        title: "Learn",
-        body: "Just kidding.",
-        author: "thingone",
-        category: "redux",
-        voteScore: -5,
-        deleted: false,
-        commentCount: 0
-      }
-    ]);
-  });
-
-  it("should handle SORT_POST / OLD_POST", () => {
-    expect(
-      post(postsMock, {
-        type: types.SORT_POST,
-        atributes: "OLD_POST"
-      })
-    ).toEqual([
-      {
-        id: "8xf0",
-        timestamp: 1467166872634,
-        title: "Udacity",
-        body: "Everyone.",
-        author: "thingtwo",
-        category: "react",
-        voteScore: 6,
-        deleted: false,
-        commentCount: 2
-      },
-      {
-        id: "6ni6",
-        timestamp: 1468479767190,
-        title: "Learn",
-        body: "Just kidding.",
-        author: "thingone",
-        category: "redux",
-        voteScore: -5,
-        deleted: false,
-        commentCount: 0
-      }
-    ]);
-  });
-
-  it("should handle SORT_POST / RECENT_POST", () => {
-    expect(
-      post(postsMock, {
-        type: types.SORT_POST,
-        atributes: "RECENT_POST"
-      })
-    ).toEqual([
-      {
-        id: "6ni6",
-        timestamp: 1468479767190,
-        title: "Learn",
-        body: "Just kidding.",
-        author: "thingone",
-        category: "redux",
-        voteScore: -5,
-        deleted: false,
-        commentCount: 0
-      },
-      {
-        id: "8xf0",
-        timestamp: 1467166872634,
-        title: "Udacity",
-        body: "Everyone.",
-        author: "thingtwo",
-        category: "react",
-        voteScore: 6,
-        deleted: false,
-        commentCount: 2
       }
     ]);
   });

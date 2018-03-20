@@ -11,6 +11,7 @@ describe("reducers comment", () => {
       body: "Hi there! I am a COMMENT.",
       author: "thingtwo"
     };
+
     commentsMock = [
       {
         id: "894",
@@ -18,7 +19,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "two",
-        voteScore: 6
+        voteScore: 6,
+        deleted: false,
+        parentDeleted: false
       },
       {
         id: "895",
@@ -26,15 +29,18 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "one",
-        voteScore: 1
+        voteScore: 1,
+        deleted: false,
+        parentDeleted: false
       }
     ];
   });
+
   it("should handle DELETE_COMMENT", () => {
     expect(
       comment(commentsMock, {
         type: types.DELETE_COMMENT,
-        comment: { id: "895" }
+        comment: { id: "895", deleted: true }
       })
     ).toEqual([
       {
@@ -43,7 +49,49 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "two",
-        voteScore: 6
+        voteScore: 6,
+        deleted: false,
+        parentDeleted: false
+      },
+      {
+        id: "895",
+        parentId: "80",
+        timestamp: 1468166872634,
+        body: "Hi there! I am a COMMENT.",
+        author: "one",
+        voteScore: 1,
+        deleted: true,
+        parentDeleted: false
+      }
+    ]);
+  });
+
+  it("should handle PARENT_DELETE_COMMENT", () => {
+    expect(
+      comment(commentsMock, {
+        type: types.PARENT_DELETE_COMMENT,
+        comment: { id: "80", deleted: true }
+      })
+    ).toEqual([
+      {
+        id: "894",
+        parentId: "80",
+        timestamp: 1468166872634,
+        body: "Hi there! I am a COMMENT.",
+        author: "two",
+        voteScore: 6,
+        deleted: false,
+        parentDeleted: true
+      },
+      {
+        id: "895",
+        parentId: "80",
+        timestamp: 1468166872634,
+        body: "Hi there! I am a COMMENT.",
+        author: "one",
+        voteScore: 1,
+        deleted: false,
+        parentDeleted: true
       }
     ]);
   });
@@ -61,7 +109,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "two",
-        voteScore: 6
+        voteScore: 6,
+        deleted: false,
+        parentDeleted: false
       },
       {
         id: "895",
@@ -69,7 +119,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "one",
-        voteScore: 1
+        voteScore: 1,
+        deleted: false,
+        parentDeleted: false
       }
     ]);
   });
@@ -87,7 +139,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "two",
-        voteScore: 6
+        voteScore: 6,
+        deleted: false,
+        parentDeleted: false
       },
       {
         id: "895",
@@ -95,7 +149,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "new edit",
         author: "one",
-        voteScore: 1
+        voteScore: 1,
+        deleted: false,
+        parentDeleted: false
       }
     ]);
   });
@@ -113,7 +169,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "two",
-        voteScore: 6
+        voteScore: 6,
+        deleted: false,
+        parentDeleted: false
       },
       {
         id: "895",
@@ -121,7 +179,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "one",
-        voteScore: 1
+        voteScore: 1,
+        deleted: false,
+        parentDeleted: false
       }
     ]);
   });
@@ -139,7 +199,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "two",
-        voteScore: 6
+        voteScore: 6,
+        deleted: false,
+        parentDeleted: false
       },
       {
         id: "895",
@@ -147,7 +209,9 @@ describe("reducers comment", () => {
         timestamp: 1468166872634,
         body: "Hi there! I am a COMMENT.",
         author: "one",
-        voteScore: 1
+        voteScore: 1,
+        deleted: false,
+        parentDeleted: false
       }
     ]);
   });

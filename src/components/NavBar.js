@@ -12,10 +12,10 @@ const Navbar = ({ categories = [], newPost, sortPost, disabled, filter }) => {
       </NavLink>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav">
           <li className="nav-item active">
-            <NavLink className="nav-link" to="/">
-              Home <span className="sr-only">(current)</span>
+            <NavLink className="nav-link" exact to="/">
+              Home 
             </NavLink>
           </li>
           {categories.map((category, index) => (

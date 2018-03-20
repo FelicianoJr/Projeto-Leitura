@@ -6,15 +6,7 @@ import NavBarContainer from "./NavBarContainer";
 import CardBodyDetail from "../components/CardBodyDetail";
 import FormCommentContainer from "./FormCommentContainer";
 import { getMakeFilterComment } from "../selectors/index";
-
-import {
-  removeComment,
-  voteComment,
-  getComment,
-  getCommentPost,
-  getPostId,
-  getCategoryAll
-} from "../actions";
+import { removeComment, voteComment, getComment, getPostId } from "../actions";
 
 const customStyles = {
   content: {
@@ -37,30 +29,16 @@ class PostDetailContainer extends React.Component {
 
   componentDidMount() {
     Modal.setAppElement("#root");
-    const {
-      getPostId,
-      getCommentPost,
-      categories,
-      getCategoryAll
-    } = this.props;
-
-    if (categories.length === 0) {
-      getCategoryAll();
-    }
 
     const { id } = this.props.match.params;
-    if (id) {
-      getPostId({ id });
-      getCommentPost({ id });
-    }
+    this.findPostID(id);
   }
 
-  setVoteDown = data => {
-    return { id: data.id, option: "downVote" };
-  };
-
-  setVoteUp = data => {
-    return { id: data.id, option: "upVote" };
+  findPostID = id => {
+    const { getPostId } = this.props;
+    if (id) {
+      getPostId({ id });
+    }
   };
 
   toggle = () => {
@@ -76,7 +54,7 @@ class PostDetailContainer extends React.Component {
         <NavBarContainer disabled={true} />
         <div className="container">
           <PostContainer />
-          
+
           {comments &&
             comments.map(comment => (
               <div key={comment.id} className="card mb-2 mx-2">
@@ -87,8 +65,12 @@ class PostDetailContainer extends React.Component {
                     this.toggle();
                   }}
                   remove={() => removeComment(comment)}
-                  voteDown={() => voteComment(this.setVoteDown(comment))}
-                  voteUp={() => voteComment(this.setVoteUp(comment))}
+                  voteDown={() =>
+                    voteComment({ id: comment.id, option: "downVote" })
+                  }
+                  voteUp={() =>
+                    voteComment({ id: comment.id, option: "upVote" })
+                  }
                 />
               </div>
             ))}
@@ -104,11 +86,9 @@ class PostDetailContainer extends React.Component {
 const makeMapStateToProps = () => {
   const getFilter = getMakeFilterComment();
   const mapStateToProps = (state, props) => {
-    console.log(state)
     return {
       posts: state.posts,
-      comments: getFilter(state, props),
-      categories: state.categories
+      comments: getFilter(state, props)
     };
   };
   return mapStateToProps;
@@ -116,8 +96,6 @@ const makeMapStateToProps = () => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getCategoryAll: () => dispatch(getCategoryAll()),
-    getCommentPost: data => dispatch(getCommentPost(data)),
     getPostId: data => dispatch(getPostId(data)),
     removeComment: data => dispatch(removeComment(data)),
     voteComment: data => dispatch(voteComment(data)),

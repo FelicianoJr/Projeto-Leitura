@@ -35,7 +35,7 @@ const comment = (state = [], action) => {
           comment.id === action.comment.id
             ? {
                 ...comment,
-                deleted: action.comment.deleted
+                deleted: true
               }
             : comment
       );
@@ -46,7 +46,7 @@ const comment = (state = [], action) => {
           comment.parentId === action.comment.id
             ? {
                 ...comment,
-                parentDeleted: true
+                parentDeleted: action.comment.deleted
               }
             : comment
       );

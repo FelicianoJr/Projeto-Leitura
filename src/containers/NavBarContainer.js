@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import { connect } from "react-redux";
 import { UUID } from "../util/UUID";
-import { getPost, sortPost } from "../actions";
+import { getPost, sortPost, getCategoryAll } from "../actions";
 import NavBar from "../components/NavBar";
 import FormPostContainer from "./FormPostContainer";
 
@@ -27,7 +27,15 @@ class NavBarContainer extends React.PureComponent {
 
   componentDidMount() {
     Modal.setAppElement("#root");
+    this.findCategories();
   }
+
+  findCategories = () => {
+    const { categories } = this.props;
+    if (categories.length === 0) {
+      this.props.categoryAll();
+    }
+  };
 
   toggle = () => {
     this.setState({
@@ -43,7 +51,7 @@ class NavBarContainer extends React.PureComponent {
   };
 
   render() {
-    const { categories, getPost, disabled, sortPost, filter } = this.props;
+    const { categories, getPost, disabled, sortPost, filterPost } = this.props;
     return (
       <div>
         <NavBar
@@ -54,7 +62,7 @@ class NavBarContainer extends React.PureComponent {
           }}
           sortPost={sortPost}
           disabled={disabled}
-          filter={filter}
+          filter={filterPost}
         />
         <Modal isOpen={this.state.modal} style={customStyles}>
           <FormPostContainer toggle={this.toggle} />
@@ -72,7 +80,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     sortPost: e => dispatch(sortPost(e.target.value)),
-    getPost: post => dispatch(getPost(post))
+    getPost: post => dispatch(getPost(post)),
+    categoryAll: () => dispatch(getCategoryAll())
   };
 };
 

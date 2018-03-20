@@ -7,6 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Navbar
     categories={Array []}
     disabled={undefined}
+    filter={undefined}
     newPost={[Function]}
     sortPost={[Function]}
 />,
@@ -36,7 +37,7 @@ ShallowWrapper {
           id="navbarSupportedContent"
 >
           <ul
-                    className="navbar-nav mr-auto"
+                    className="navbar-nav"
           >
                     <li
                               className="nav-item active"
@@ -45,14 +46,10 @@ ShallowWrapper {
                                         activeClassName="active"
                                         ariaCurrent="true"
                                         className="nav-link"
+                                        exact={true}
                                         to="/"
                               >
-                                        Home 
-                                        <span
-                                                  className="sr-only"
-                                        >
-                                                  (current)
-                                        </span>
+                                        Home
                               </NavLink>
                     </li>
           </ul>
@@ -71,7 +68,7 @@ ShallowWrapper {
                               value={undefined}
                     >
                               <option
-                                        value="SCORE_BIGGER"
+                                        value=""
                               >
                                         Maior Pontuação
                               </option>
@@ -127,7 +124,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <ul
-            className="navbar-nav mr-auto"
+            className="navbar-nav"
 >
             <li
                         className="nav-item active"
@@ -136,14 +133,10 @@ ShallowWrapper {
                                     activeClassName="active"
                                     ariaCurrent="true"
                                     className="nav-link"
+                                    exact={true}
                                     to="/"
                         >
-                                    Home 
-                                    <span
-                                                className="sr-only"
-                                    >
-                                                (current)
-                                    </span>
+                                    Home
                         </NavLink>
             </li>
 </ul>,
@@ -164,19 +157,15 @@ ShallowWrapper {
                                 activeClassName="active"
                                 ariaCurrent="true"
                                 className="nav-link"
+                                exact={true}
                                 to="/"
                 >
-                                Home 
-                                <span
-                                                className="sr-only"
-                                >
-                                                (current)
-                                </span>
+                                Home
                 </NavLink>
 </li>,
               Array [],
             ],
-            "className": "navbar-nav mr-auto",
+            "className": "navbar-nav",
           },
           "ref": null,
           "rendered": Array [
@@ -189,14 +178,10 @@ ShallowWrapper {
                   activeClassName="active"
                   ariaCurrent="true"
                   className="nav-link"
+                  exact={true}
                   to="/"
 >
-                  Home 
-                  <span
-                                    className="sr-only"
-                  >
-                                    (current)
-                  </span>
+                  Home
 </NavLink>,
                 "className": "nav-item active",
               },
@@ -208,33 +193,13 @@ ShallowWrapper {
                 "props": Object {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
-                  "children": Array [
-                    "Home ",
-                    <span
-                      className="sr-only"
->
-                      (current)
-</span>,
-                  ],
+                  "children": "Home",
                   "className": "nav-link",
+                  "exact": true,
                   "to": "/",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "Home ",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "(current)",
-                      "className": "sr-only",
-                    },
-                    "ref": null,
-                    "rendered": "(current)",
-                    "type": "span",
-                  },
-                ],
+                "rendered": "Home",
                 "type": [Function],
               },
               "type": "li",
@@ -261,7 +226,7 @@ ShallowWrapper {
                             value={undefined}
               >
                             <option
-                                          value="SCORE_BIGGER"
+                                          value=""
                             >
                                           Maior Pontuação
                             </option>
@@ -308,7 +273,7 @@ ShallowWrapper {
                 value={undefined}
 >
                 <option
-                                value="SCORE_BIGGER"
+                                value=""
                 >
                                 Maior Pontuação
                 </option>
@@ -338,7 +303,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <option
-                    value="SCORE_BIGGER"
+                    value=""
 >
                     Maior Pontuação
 </option>,
@@ -372,7 +337,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Maior Pontuação",
-                    "value": "SCORE_BIGGER",
+                    "value": "",
                   },
                   "ref": null,
                   "rendered": "Maior Pontuação",
@@ -460,7 +425,7 @@ ShallowWrapper {
             id="navbarSupportedContent"
 >
             <ul
-                        className="navbar-nav mr-auto"
+                        className="navbar-nav"
             >
                         <li
                                     className="nav-item active"
@@ -469,14 +434,10 @@ ShallowWrapper {
                                                 activeClassName="active"
                                                 ariaCurrent="true"
                                                 className="nav-link"
+                                                exact={true}
                                                 to="/"
                                     >
-                                                Home 
-                                                <span
-                                                            className="sr-only"
-                                                >
-                                                            (current)
-                                                </span>
+                                                Home
                                     </NavLink>
                         </li>
             </ul>
@@ -495,7 +456,7 @@ ShallowWrapper {
                                     value={undefined}
                         >
                                     <option
-                                                value="SCORE_BIGGER"
+                                                value=""
                                     >
                                                 Maior Pontuação
                                     </option>
@@ -551,7 +512,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <ul
-              className="navbar-nav mr-auto"
+              className="navbar-nav"
 >
               <li
                             className="nav-item active"
@@ -560,14 +521,10 @@ ShallowWrapper {
                                           activeClassName="active"
                                           ariaCurrent="true"
                                           className="nav-link"
+                                          exact={true}
                                           to="/"
                             >
-                                          Home 
-                                          <span
-                                                        className="sr-only"
-                                          >
-                                                        (current)
-                                          </span>
+                                          Home
                             </NavLink>
               </li>
 </ul>,
@@ -588,19 +545,15 @@ ShallowWrapper {
                                     activeClassName="active"
                                     ariaCurrent="true"
                                     className="nav-link"
+                                    exact={true}
                                     to="/"
                   >
-                                    Home 
-                                    <span
-                                                      className="sr-only"
-                                    >
-                                                      (current)
-                                    </span>
+                                    Home
                   </NavLink>
 </li>,
                 Array [],
               ],
-              "className": "navbar-nav mr-auto",
+              "className": "navbar-nav",
             },
             "ref": null,
             "rendered": Array [
@@ -613,14 +566,10 @@ ShallowWrapper {
                     activeClassName="active"
                     ariaCurrent="true"
                     className="nav-link"
+                    exact={true}
                     to="/"
 >
-                    Home 
-                    <span
-                                        className="sr-only"
-                    >
-                                        (current)
-                    </span>
+                    Home
 </NavLink>,
                   "className": "nav-item active",
                 },
@@ -632,33 +581,13 @@ ShallowWrapper {
                   "props": Object {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
-                    "children": Array [
-                      "Home ",
-                      <span
-                        className="sr-only"
->
-                        (current)
-</span>,
-                    ],
+                    "children": "Home",
                     "className": "nav-link",
+                    "exact": true,
                     "to": "/",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    "Home ",
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "(current)",
-                        "className": "sr-only",
-                      },
-                      "ref": null,
-                      "rendered": "(current)",
-                      "type": "span",
-                    },
-                  ],
+                  "rendered": "Home",
                   "type": [Function],
                 },
                 "type": "li",
@@ -685,7 +614,7 @@ ShallowWrapper {
                                 value={undefined}
                 >
                                 <option
-                                                value="SCORE_BIGGER"
+                                                value=""
                                 >
                                                 Maior Pontuação
                                 </option>
@@ -732,7 +661,7 @@ ShallowWrapper {
                   value={undefined}
 >
                   <option
-                                    value="SCORE_BIGGER"
+                                    value=""
                   >
                                     Maior Pontuação
                   </option>
@@ -762,7 +691,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     <option
-                      value="SCORE_BIGGER"
+                      value=""
 >
                       Maior Pontuação
 </option>,
@@ -796,7 +725,7 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "children": "Maior Pontuação",
-                      "value": "SCORE_BIGGER",
+                      "value": "",
                     },
                     "ref": null,
                     "rendered": "Maior Pontuação",

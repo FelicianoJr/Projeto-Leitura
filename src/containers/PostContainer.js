@@ -2,12 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 import { UUID } from "../util/UUID";
 import Modal from "react-modal";
-import { removePost, votePost, getPost, getComment } from "../actions";
 import GroupButtonFooter from "../components/GroupButtonFooter";
 import CardBodyDetail from "../components/CardBodyDetail";
 import FormPostContainer from "./FormPostContainer";
 import FormCommentContainer from "./FormCommentContainer";
 import { getMakeFilterPost } from "../selectors/index";
+import { withRouter } from "react-router-dom";
+import {
+  removePost,
+  votePost,
+  getPost,
+  getComment,
+  getAllPost
+} from "../actions";
 
 const customStyles = {
   content: {
@@ -31,14 +38,14 @@ class PostContainer extends React.Component {
 
   componentDidMount() {
     Modal.setAppElement("#root");
+    this.findPost();
   }
 
-  setVoteDown = data => {
-    return { id: data.id, option: "downVote" };
-  };
-
-  setVoteUp = data => {
-    return { id: data.id, option: "upVote" };
+  findPost = () => {
+    const { url } = this.props.match;
+    if (url === "/") {
+      this.props.getAllPost();
+    }
   };
 
   addComment = post => {
@@ -76,8 +83,8 @@ class PostContainer extends React.Component {
                   this.togglePost();
                 }}
                 remove={() => removePost(post)}
-                voteDown={() => votePost(this.setVoteDown(post))}
-                voteUp={() => votePost(this.setVoteUp(post))}
+                voteDown={() => votePost({ id: post.id, option: "downVote" })}
+                voteUp={() => votePost({ id: post.id, option: "upVote" })}
               />
               <GroupButtonFooter
                 post={post}
@@ -102,10 +109,10 @@ class PostContainer extends React.Component {
 }
 
 const makeMapStateToProps = () => {
-  const getSort = getMakeFilterPost();
+  const getFilter = getMakeFilterPost();
   const mapStateToProps = (state, props) => {
     return {
-      posts: getSort(state, props)
+      posts: getFilter(state, props)
     };
   };
   return mapStateToProps;
@@ -113,6 +120,7 @@ const makeMapStateToProps = () => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    getAllPost: () => dispatch(getAllPost()),
     getPost: data => dispatch(getPost(data)),
     removePost: data => dispatch(removePost(data)),
     votePost: data => dispatch(votePost(data)),
@@ -120,4 +128,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(makeMapStateToProps, mapDispatchToProps)(PostContainer);
+export default withRouter(
+  connect(makeMapStateToProps, mapDispatchToProps)(PostContainer)
+);
