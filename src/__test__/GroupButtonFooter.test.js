@@ -43,7 +43,7 @@ describe("<GroupButtonFooter/>", () => {
     expect(span.text()).toEqual("2")
   })
 
-  it("should click ", () => {
+  it("should click newComment ", () => {
     const { button, action } = setup(post);
     button.simulate("click");
     expect(action.newComment).toBeCalled();

@@ -2,7 +2,11 @@ import * as types from "../constants/ActionTypes";
 import editModal from "./editModal";
 
 describe("reducer edit modal", () => {
-  it("should rende POST_MODAL", () => {
+  it("should handle initial state", () => {
+    expect(editModal([], {})).toEqual([]);
+  });
+
+  it("should handle POST_MODAL", () => {
     expect(
       editModal([], {
         type: types.POST_MODAL,
@@ -16,7 +20,7 @@ describe("reducer edit modal", () => {
     });
   });
 
-  it("should rende COMMENT_MODAL", () => {
+  it("should handle COMMENT_MODAL", () => {
     expect(
       editModal([], {
         type: types.COMMENT_MODAL,
@@ -28,14 +32,5 @@ describe("reducer edit modal", () => {
         timestamp: 1468166872634
       }
     });
-  });
-
-  it("should rende EQUAL ZERO", () => {
-    expect(
-      editModal([], {
-        type: "",
-        comment: { id: "895", timestamp: 1468166872634 }
-      })
-    ).toEqual([]);
   });
 });

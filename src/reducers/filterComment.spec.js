@@ -2,7 +2,8 @@ import { filters } from "../constants/ActionTypes";
 import filterComment from "./filterComment";
 
 describe("reducer filterComment", () => {
-  it("should rende DELETED_COMMENT", () => {
+
+  it("should handle DELETED_COMMENT", () => {
     expect(
       filterComment([], {
         type: filters.DELETED_COMMENT,
@@ -14,7 +15,7 @@ describe("reducer filterComment", () => {
     });
   });
 
-  it("should rende PARENT_DELETED_COMMENT", () => {
+  it("should handle PARENT_DELETED_COMMENT", () => {
     expect(
       filterComment([], {
         type: filters.PARENT_DELETED_COMMENT,
@@ -26,7 +27,7 @@ describe("reducer filterComment", () => {
     });
   });
 
-  it("should rende EQUAL ZERO", () => {
+  it("should handle FAILED ", () => {
     expect(
       filterComment([], {
         type: "",
@@ -35,7 +36,7 @@ describe("reducer filterComment", () => {
     ).toEqual([]);
   });
 
-  it("should rende EQUAL Z", () => {
+  it("should provide the initial state ", () => {
     expect(
       filterComment([{ valuew: "DELETED", id: "jdudj" }], {
         type: "",

@@ -1,41 +1,45 @@
 import post from "./post";
 import * as types from "../constants/ActionTypes";
 
-export const postsMock = [
-  {
-    id: "8xf0",
-    timestamp: 1467166872634,
-    title: "Udacity",
-    body: "Everyone.",
-    author: "thingtwo",
-    category: "react",
-    voteScore: 6,
-    deleted: false,
-    commentCount: 2
-  },
-  {
-    id: "6ni6",
-    timestamp: 1468479767190,
-    title: "Learn",
-    body: "Just kidding.",
-    author: "thingone",
-    category: "redux",
-    voteScore: -5,
-    deleted: false,
-    commentCount: 0
-  }
-];
-
-export const newPostMock = {
-  id: "6nlok",
-  timestamp: 1468479767190,
-  title: "Learning",
-  body: "Just kidding.",
-  author: "thingone",
-  category: "redux"
-};
-
 describe("reducers post", () => {
+  let postsMock;
+  let newPostMock;
+  beforeEach(() => {
+    postsMock = [
+      {
+        id: "8xf0",
+        timestamp: 1467166872634,
+        title: "Udacity",
+        body: "Everyone.",
+        author: "thingtwo",
+        category: "react",
+        voteScore: 6,
+        deleted: false,
+        commentCount: 2
+      },
+      {
+        id: "6ni6",
+        timestamp: 1468479767190,
+        title: "Learn",
+        body: "Just kidding.",
+        author: "thingone",
+        category: "redux",
+        voteScore: -5,
+        deleted: false,
+        commentCount: 0
+      }
+    ];
+
+    newPostMock = {
+      id: "6nlok",
+      timestamp: 1468479767190,
+      title: "Learning",
+      body: "Just kidding.",
+      author: "thingone",
+      category: "redux"
+    };
+  });
+
   it("should handle ADD_POST", () => {
     expect(
       post([], {

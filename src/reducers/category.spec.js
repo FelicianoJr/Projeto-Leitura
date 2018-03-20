@@ -16,6 +16,10 @@ describe("reducers CATEGORY", () => {
     ];
   });
 
+  it("should handle initial state", () => {
+    expect(category([], {})).toEqual([]);
+  });
+
   it("should handle ALL_CATEGORY", () => {
     expect(
       category([], {

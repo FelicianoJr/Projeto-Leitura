@@ -37,7 +37,7 @@ describe("<CardBodyDetail/>", () => {
     expect(small.at(1).text()).toEqual("Criado por Feliciano em 28/06/2016");
   });
 
-  it("renders a <GroupButtonCard/>", () => {
+  it("render one <GroupButtonCard/>", () => {
     const { groupButton } = setup(postProps);
     expect(groupButton.length).toEqual(1);
   });

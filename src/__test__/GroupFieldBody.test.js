@@ -14,7 +14,7 @@ const setup = () => {
 };
 
 describe("<GroupFieldBody/>", () => {
-  it("should rende  <Form>", () => {
+  it("should rende 2 <FormGroup>", () => {
     const { formGroup } = setup();
     expect(formGroup.length).toEqual(2);
   });
@@ -25,7 +25,7 @@ describe("<GroupFieldBody/>", () => {
     expect(label.at(1).text()).toEqual("Descrição");
   });
 
-  it("should rende  <Label> ", () => {
+  it("should rende 2 <Label> ", () => {
     const { input } = setup();
     expect(input.length).toEqual(2);
   });

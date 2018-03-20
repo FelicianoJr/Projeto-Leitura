@@ -2,7 +2,14 @@ import { filters } from "../constants/ActionTypes";
 import filterPost from "./filterPost";
 
 describe("reducer filterPost", () => {
-  it("should rende SORT_POST", () => {
+
+  it("should handle the initial state", () => {
+    expect(
+      filterPost([], {})
+    ).toEqual([]);
+  });
+
+  it("should handle SORT_POST", () => {
     expect(
       filterPost([], {
         type: filters.SORT_POST,
@@ -14,7 +21,7 @@ describe("reducer filterPost", () => {
     });
   });
 
-  it("should rende DELETE POST", () => {
+  it("should handle DELETE POST", () => {
     expect(
       filterPost([], {
         type: filters.DELETED_POST,
@@ -26,12 +33,5 @@ describe("reducer filterPost", () => {
     });
   });
 
-  it("should rende EQUAL ZERO", () => {
-    expect(
-      filterPost([], {
-        type: "",
-        comment: { value: "DELETED", id: "kkid" }
-      })
-    ).toEqual([]);
-  });
+  
 });

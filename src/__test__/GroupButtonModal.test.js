@@ -18,7 +18,7 @@ const setup = (pristine, submitting) => {
 };
 
 describe("<GroupButtonModal/>", () => {
-  it("should rende  Button", () => {
+  it("should rende 2 Button", () => {
     const { button } = setup();
     expect(button.length).toEqual(2);
   });
