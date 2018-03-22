@@ -18,12 +18,10 @@ const customStyles = {
 };
 
 class NavBarContainer extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-  }
+  
+  state = {
+    modal: false
+  };
 
   componentDidMount() {
     Modal.setAppElement("#root");
@@ -33,7 +31,7 @@ class NavBarContainer extends React.PureComponent {
   findCategories = () => {
     const { categories } = this.props;
     if (categories.length === 0) {
-      this.props.categoryAll();
+      this.props.getCategoryAll();
     }
   };
 
@@ -60,7 +58,7 @@ class NavBarContainer extends React.PureComponent {
             getPost(this.newPost());
             this.toggle();
           }}
-          sortPost={sortPost}
+          sortPost={e => sortPost(e.target.value)}
           disabled={disabled}
           filter={filterPost}
         />
@@ -77,12 +75,10 @@ const mapStateToProps = state => ({
   filterPost: state.filterPost.value
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    sortPost: e => dispatch(sortPost(e.target.value)),
-    getPost: post => dispatch(getPost(post)),
-    categoryAll: () => dispatch(getCategoryAll())
-  };
+const mapDispatchToProps = {
+  sortPost,
+  getPost,
+  getCategoryAll
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBarContainer);

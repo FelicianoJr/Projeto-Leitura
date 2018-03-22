@@ -20,12 +20,9 @@ const customStyles = {
 };
 
 class PostDetailContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-  }
+  state = {
+    modal: false
+  };
 
   componentDidMount() {
     Modal.setAppElement("#root");
@@ -94,14 +91,13 @@ const makeMapStateToProps = () => {
   return mapStateToProps;
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPostId: data => dispatch(getPostId(data)),
-    removeComment: data => dispatch(removeComment(data)),
-    voteComment: data => dispatch(voteComment(data)),
-    getComment: data => dispatch(getComment(data))
-  };
+const mapDispatchToProps = {
+  getPostId,
+  removeComment,
+  voteComment,
+  getComment
 };
+
 export default connect(makeMapStateToProps, mapDispatchToProps)(
   PostDetailContainer
 );

@@ -32,6 +32,4 @@ describe("reducer filterPost", () => {
       id: "kkid"
     });
   });
-
-  
 });

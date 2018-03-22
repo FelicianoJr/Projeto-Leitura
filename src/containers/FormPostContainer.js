@@ -50,11 +50,9 @@ FormPostContainer = reduxForm({
   enableReinitialize: true
 })(FormPostContainer);
 
-const mapDispatchToProps = dispatch => {
-  return {
-    editPost: data => dispatch(editPost(data)),
-    addPost: data => dispatch(addPost(data))
-  };
+const mapDispatchToProps = {
+  editPost,
+  addPost
 };
 
 FormPostContainer = connect(

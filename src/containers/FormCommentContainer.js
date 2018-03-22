@@ -47,11 +47,9 @@ FormCommentContainer = reduxForm({
   enableReinitialize: true
 })(FormCommentContainer);
 
-const mapDispatchToProps = dispatch => {
-  return {
-    editComment: data => dispatch(editComment(data)),
-    addComment: data => dispatch(addComment(data))
-  };
+const mapDispatchToProps = {
+  editComment,
+  addComment
 };
 
 FormCommentContainer = connect(

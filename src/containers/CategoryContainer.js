@@ -5,7 +5,6 @@ import PostContainer from "./PostContainer";
 import NavBarContainer from "./NavBarContainer";
 
 class CategoryContainer extends React.Component {
-
   componentDidMount() {
     this.props.getPostAllCategory(this.props.match.params.category);
   }
@@ -26,10 +25,8 @@ class CategoryContainer extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPostAllCategory: data => dispatch(getPostAllCategory(data))
-  };
+const mapDispatchToProps = {
+  getPostAllCategory
 };
 
 export default connect(null, mapDispatchToProps)(CategoryContainer);
