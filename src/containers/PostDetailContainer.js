@@ -6,7 +6,16 @@ import NavBarContainer from "./NavBarContainer";
 import CardBodyDetail from "../components/CardBodyDetail";
 import FormCommentContainer from "./FormCommentContainer";
 import { getMakeFilterComment } from "../selectors/index";
-import { removeComment, voteComment, getComment, getPostId } from "../actions";
+import { withRouter } from "react-router-dom";
+
+import {
+  removeComment,
+  voteComment,
+  getComment,
+  getPostId,
+  receivePost,
+  getCommentPost
+} from "../actions";
 
 const customStyles = {
   content: {
@@ -26,17 +35,27 @@ class PostDetailContainer extends React.Component {
 
   componentDidMount() {
     Modal.setAppElement("#root");
-
     const { id } = this.props.match.params;
-    this.findPostID(id);
+    if (id) {
+      this.findPostID(id);
+    }
   }
 
   findPostID = id => {
-    const { getPostId } = this.props;
-    if (id) {
-      getPostId({ id });
-    }
+    const { getPostId, receivePost, getCommentPost, history } = this.props;
+    getPostId({ id })
+      .then(resp => {
+        if (this.isResponseOk(resp)) {
+          receivePost(resp);
+          getCommentPost(resp);
+        } else {
+          history.push("/PageNotFound");
+        }
+      })
+      .catch(error => console.log(error));
   };
+
+  isResponseOk = resp => !resp.error && Object.keys(resp).length !== 0;
 
   toggle = () => {
     this.setState({
@@ -95,9 +114,11 @@ const mapDispatchToProps = {
   getPostId,
   removeComment,
   voteComment,
-  getComment
+  getComment,
+  getCommentPost,
+  receivePost
 };
 
-export default connect(makeMapStateToProps, mapDispatchToProps)(
-  PostDetailContainer
+export default withRouter(
+  connect(makeMapStateToProps, mapDispatchToProps)(PostDetailContainer)
 );

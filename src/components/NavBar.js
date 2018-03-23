@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { filters } from "../constants/ActionTypes";
 
@@ -7,20 +7,20 @@ const Navbar = ({ categories = [], newPost, sortPost, disabled, filter }) => {
   const upperName = name => name.charAt(0).toUpperCase() + name.slice(1);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-      <NavLink className="navbar-brand" to="/">
+      <Link className="navbar-brand" to="/">
         Udacity
-      </NavLink>
+      </Link>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav">
-          <li className="nav-item active">
-            <NavLink className="nav-link" exact to="/">
-              Home 
+          <li className="nav-item ">
+            <NavLink className="nav-link" to="/">
+              Home
             </NavLink>
           </li>
           {categories.map((category, index) => (
             <li key={index} className="nav-item">
-              <NavLink className="nav-link" exact to={`/${category.path}`}>
+              <NavLink className="nav-link" to={`/${category.path}`}>
                 {upperName(category.name)}
               </NavLink>
             </li>

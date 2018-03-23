@@ -7,7 +7,8 @@ export {
   getPostId,
   removePost,
   sortPost,
-  votePost
+  votePost,
+  receivePost
 } from "./postActions";
 export {
   addComment,

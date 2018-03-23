@@ -1,6 +1,6 @@
 import postAPI from "../api/postAPI";
 import * as types from "../constants/ActionTypes";
-import { parentDeleteComment, getCommentPost } from "./commentActions";
+import { parentDeleteComment } from "./commentActions";
 
 const sort = post => ({
   type: types.filters.SORT_POST,
@@ -33,15 +33,11 @@ const deletedFilterPost = post => ({
 });
 
 export const getPostId = post => dispatch => {
-  postAPI
-    .getId(post.id)
-    .then(resp => {
-      if (!resp.error && Object.keys(resp).length !== 0) {
-        dispatch(receivePostId([resp]));
-        dispatch(getCommentPost({id:post.id}));
-      }
-    })
-    .catch(error => console.log(error));
+  return postAPI.getId(post.id);
+};
+
+export const receivePost = post => dispatch => {
+  dispatch(receivePostId([post]));
 };
 
 const receivePostId = post => ({
