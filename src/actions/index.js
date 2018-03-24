@@ -16,6 +16,7 @@ export {
   editComment,
   getCommentPost,
   getIdComment,
-  voteComment
+  voteComment,
+  receiveCommentForPost
 } from "./commentActions";
 export { getComment, getPost } from "./modalActions";

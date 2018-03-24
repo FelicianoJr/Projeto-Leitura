@@ -7,14 +7,15 @@ import CardBodyDetail from "../components/CardBodyDetail";
 import FormCommentContainer from "./FormCommentContainer";
 import { getMakeFilterComment } from "../selectors/index";
 import { withRouter } from "react-router-dom";
+import postAPI from "../api/postAPI";
+import commnentAPI from "../api/commentAPI";
 
 import {
   removeComment,
   voteComment,
   getComment,
-  getPostId,
   receivePost,
-  getCommentPost
+  receiveCommentForPost
 } from "../actions";
 
 const customStyles = {
@@ -42,20 +43,29 @@ class PostDetailContainer extends React.Component {
   }
 
   findPostID = id => {
-    const { getPostId, receivePost, getCommentPost, history } = this.props;
-    getPostId({ id })
-      .then(resp => {
+    const { receivePost, history } = this.props;
+    postAPI
+      .getId(id).then(resp => {
         if (this.isResponseOk(resp)) {
           receivePost(resp);
-          getCommentPost(resp);
+          this.findCommentForId(resp.id);
         } else {
           history.push("/PageNotFound");
         }
+      }).catch(error => console.log(error));
+  };
+ 
+  isResponseOk = resp => !resp.error && Object.keys(resp).length !== 0;
+
+  findCommentForId = id => {
+    const { receiveCommentForPost } = this.props;
+    commnentAPI
+      .getPostIdComments(id)
+      .then(comment => {
+        receiveCommentForPost(comment);
       })
       .catch(error => console.log(error));
   };
-
-  isResponseOk = resp => !resp.error && Object.keys(resp).length !== 0;
 
   toggle = () => {
     this.setState({
@@ -111,12 +121,11 @@ const makeMapStateToProps = () => {
 };
 
 const mapDispatchToProps = {
-  getPostId,
   removeComment,
   voteComment,
   getComment,
-  getCommentPost,
-  receivePost
+  receivePost,
+  receiveCommentForPost
 };
 
 export default withRouter(

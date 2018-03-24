@@ -33,7 +33,14 @@ const deletedFilterPost = post => ({
 });
 
 export const getPostId = post => dispatch => {
-  return postAPI.getId(post.id);
+  postAPI
+    .getId(post.id)
+    .then(resp => {
+      if (!resp.error && Object.keys(resp).length !== 0) {
+        dispatch(receivePostId([resp]));
+      }
+    })
+    .catch(error => console.log(error));
 };
 
 export const receivePost = post => dispatch => {

@@ -61,7 +61,7 @@ export const getCommentPost = comment => dispatch => {
     .catch(error => console.log(error));
 };
 
-const receiveCommentForPost = comment => ({
+export const receiveCommentForPost = comment => ({
   type: types.GET_POST_ID_COMMENT,
   comment
 });

@@ -11,8 +11,8 @@ const route = ({ store }) => {
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
-          <Route path="/PageNotFound" component={PageNotFound} />
           <Route exact path="/" component={App} />
+          <Route path="/PageNotFound" component={PageNotFound} />
           <Route exact path="/:category" component={CategoryContainer} />
           <Route path="/:category/:id" component={PostDetailContainer} />
         </Switch>
