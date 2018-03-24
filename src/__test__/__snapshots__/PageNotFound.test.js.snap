@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageNotFound /> snapshot  a PageNotFound 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PageNotFound />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Connect(NavBarContainer) />,
+        <div
+          className="jumbotron"
+>
+          <h3
+                    className="display-4"
+          >
+                    Oops, :(
+          </h3>
+          <p
+                    className="lead"
+          >
+                    Postagem não encontrada!
+          </p>
+</div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="display-4"
+>
+              Oops, :(
+</h3>,
+            <p
+              className="lead"
+>
+              Postagem não encontrada!
+</p>,
+          ],
+          "className": "jumbotron",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Oops, :(",
+              "className": "display-4",
+            },
+            "ref": null,
+            "rendered": "Oops, :(",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Postagem não encontrada!",
+              "className": "lead",
+            },
+            "ref": null,
+            "rendered": "Postagem não encontrada!",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Connect(NavBarContainer) />,
+          <div
+            className="jumbotron"
+>
+            <h3
+                        className="display-4"
+            >
+                        Oops, :(
+            </h3>
+            <p
+                        className="lead"
+            >
+                        Postagem não encontrada!
+            </p>
+</div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="display-4"
+>
+                Oops, :(
+</h3>,
+              <p
+                className="lead"
+>
+                Postagem não encontrada!
+</p>,
+            ],
+            "className": "jumbotron",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Oops, :(",
+                "className": "display-4",
+              },
+              "ref": null,
+              "rendered": "Oops, :(",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Postagem não encontrada!",
+                "className": "lead",
+              },
+              "ref": null,
+              "rendered": "Postagem não encontrada!",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

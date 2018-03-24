@@ -40,13 +40,12 @@ ShallowWrapper {
                     className="navbar-nav"
           >
                     <li
-                              className="nav-item active"
+                              className="nav-item "
                     >
                               <NavLink
                                         activeClassName="active"
                                         ariaCurrent="true"
                                         className="nav-link"
-                                        exact={true}
                                         to="/"
                               >
                                         Home
@@ -127,13 +126,12 @@ ShallowWrapper {
             className="navbar-nav"
 >
             <li
-                        className="nav-item active"
+                        className="nav-item "
             >
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
                                     className="nav-link"
-                                    exact={true}
                                     to="/"
                         >
                                     Home
@@ -151,13 +149,12 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <li
-                className="nav-item active"
+                className="nav-item "
 >
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
                                 className="nav-link"
-                                exact={true}
                                 to="/"
                 >
                                 Home
@@ -178,12 +175,11 @@ ShallowWrapper {
                   activeClassName="active"
                   ariaCurrent="true"
                   className="nav-link"
-                  exact={true}
                   to="/"
 >
                   Home
 </NavLink>,
-                "className": "nav-item active",
+                "className": "nav-item ",
               },
               "ref": null,
               "rendered": Object {
@@ -195,7 +191,6 @@ ShallowWrapper {
                   "ariaCurrent": "true",
                   "children": "Home",
                   "className": "nav-link",
-                  "exact": true,
                   "to": "/",
                 },
                 "ref": null,
@@ -428,13 +423,12 @@ ShallowWrapper {
                         className="navbar-nav"
             >
                         <li
-                                    className="nav-item active"
+                                    className="nav-item "
                         >
                                     <NavLink
                                                 activeClassName="active"
                                                 ariaCurrent="true"
                                                 className="nav-link"
-                                                exact={true}
                                                 to="/"
                                     >
                                                 Home
@@ -515,13 +509,12 @@ ShallowWrapper {
               className="navbar-nav"
 >
               <li
-                            className="nav-item active"
+                            className="nav-item "
               >
                             <NavLink
                                           activeClassName="active"
                                           ariaCurrent="true"
                                           className="nav-link"
-                                          exact={true}
                                           to="/"
                             >
                                           Home
@@ -539,13 +532,12 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <li
-                  className="nav-item active"
+                  className="nav-item "
 >
                   <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
                                     className="nav-link"
-                                    exact={true}
                                     to="/"
                   >
                                     Home
@@ -566,12 +558,11 @@ ShallowWrapper {
                     activeClassName="active"
                     ariaCurrent="true"
                     className="nav-link"
-                    exact={true}
                     to="/"
 >
                     Home
 </NavLink>,
-                  "className": "nav-item active",
+                  "className": "nav-item ",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -583,7 +574,6 @@ ShallowWrapper {
                     "ariaCurrent": "true",
                     "children": "Home",
                     "className": "nav-link",
-                    "exact": true,
                     "to": "/",
                   },
                   "ref": null,

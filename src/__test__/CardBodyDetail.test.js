@@ -42,7 +42,7 @@ describe("<CardBodyDetail/>", () => {
     expect(groupButton.length).toEqual(1);
   });
 
-  it("snapchot  a cardDetail", () => {
+  it("snapshot  a cardDetail", () => {
     const { component } = setup(postProps);
     expect(component).toMatchSnapshot();
   });

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import { filters } from "../constants/ActionTypes";
 
@@ -7,9 +7,9 @@ const Navbar = ({ categories = [], newPost, sortPost, disabled, filter }) => {
   const upperName = name => name.charAt(0).toUpperCase() + name.slice(1);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-      <Link className="navbar-brand" to="/">
+      <NavLink className="navbar-brand" to="/">
         Udacity
-      </Link>
+      </NavLink>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav">
